@@ -1,0 +1,155 @@
+body {
+  padding: 0px;
+  font: 12px Roboto, Helvetica, Arial, sans-serif;
+  letter-spacing: 2px;
+}
+
+a {
+	color: #fff;
+}
+
+a:focus, a:hover {
+	color: #eee;
+}
+
+.navbar.header {
+	z-index: 5;
+    position: absolute;
+    border-radius: 0px;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.navbar .navbar-header {
+	position: relative;
+	padding: 15px;
+}
+
+.navbar .header-tab {
+	color: #ddd;
+	font-size: 1.25em;
+	padding: 15px 100px 0 0;
+}
+
+.navbar .header-tab:hover {
+	cursor: pointer;
+	color: #fff;
+}
+
+.navbar .header-tab.active {
+	cursor: pointer;
+	color: #fff;
+}
+
+.navbar .header-tab#home-tab {
+	font-size: 2em;
+	font-weight: bold;
+	font-family: 'Satisfy', cursive;
+}
+
+.header-tab .app-icon {
+	width: 50px;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+.page {
+	color: #fff;
+	text-align: center;
+}
+
+.page .bg {
+	position: fixed;
+	width: 100%;
+    height: 100%;
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.35)), url("../images/mountain-view.jpg");
+	background-position: top;
+    background-size: 100%;
+}
+
+.page .title {
+	font-size: 2em;
+	font-weight: bold;
+	font-family: 'Satisfy', cursive;
+	padding: 20px 50px;
+	position: relative;
+    top: 100px;
+}
+
+.page .title.main-title {
+    top: 150px;
+}
+
+.page .title.title-left {
+	text-align: left;
+}
+
+.page .subtitle {
+	position: relative;
+    top: 150px;
+    width: 50%;
+    margin: auto;
+    padding: 20px 20px 50px 20px;
+	font-size: 1.25em;
+}
+
+.page .app-store {
+	position: relative;
+    top: 150px;
+	width: 200px;
+}
+
+.page .screenshot {
+	display: none;
+	padding-top: 55px;
+	width: 280px;
+}
+
+.page .screenshot.active {
+	display: block;
+}
+
+.page .scrn-buttons {
+	display: inline-block;
+    position: relative;
+    top: -300px;
+    left: -60px;
+    width: 360px;
+	text-align: -webkit-auto;
+}
+
+.page .scrn-buttons .scrn-btn {
+	display: inline-block;
+	background: none;
+	border: none;
+	position: relative;
+}
+
+.page .scrn-buttons .scrn-btn img {
+	width: 40px;
+}
+
+.page .faq-list {
+	position: relative;
+    top: 100px;
+    padding: 0 50px 50px 50px;
+    color: #fff;
+    list-style-type: decimal;
+}
+
+.page .faq-list .question-container {
+	padding: 20px 10px;
+}
+
+.page .faq-list .question-container div {
+	text-align: left;
+}
+
+.page .contact {
+	position: relative;
+    top: 100px;
+    padding: 15px 50px;
+    color: #fff;
+    text-align: left;
+}
