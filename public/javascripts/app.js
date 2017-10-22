@@ -1,4 +1,4 @@
-var app = angular.module('dreamemo', ['ui.router']);
+var app = angular.module('verze', ['ui.router']);
 
 app.controller('MainCtrl', [
 '$scope',
