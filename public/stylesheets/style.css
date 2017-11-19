@@ -27,7 +27,7 @@ a:focus, a:hover {
 
 .navbar .header-tab {
 	color: #ddd;
-	font-size: 1.25em;
+	font-size: 1.5em;
 	padding: 15px 100px 0 0;
 }
 
@@ -42,10 +42,8 @@ a:focus, a:hover {
 }
 
 .navbar .header-tab#home-tab {
-	font-size: 2em;
-	font-weight: bold;
+	font-size: 3em;
 	font-family: 'Grand Hotel', cursive;
-	letter-spacing: 2px;
 }
 
 .header-tab .app-icon {
@@ -69,7 +67,7 @@ a:focus, a:hover {
 }
 
 .page .title {
-	font-size: 2em;
+	font-size: 3em;
 	font-weight: bold;
 	font-family: 'Satisfy', cursive;
 	padding: 20px 50px;
@@ -153,4 +151,8 @@ a:focus, a:hover {
     padding: 15px 50px;
     color: #fff;
     text-align: left;
+}
+
+.page p {
+	font-size: 16px;
 }
