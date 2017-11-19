@@ -12,6 +12,9 @@ function($scope, $state){
 		} else if(option == "about") {
 			$state.go("about");
 			$('#about-tab').addClass("active");
+		} else if(option == "blog") {
+			$state.go("blog");
+			$('#blog-tab').addClass("active");
 		} else if(option == "faq") {
 			$state.go("faq");
 			$('#faq-tab').addClass("active");
@@ -24,12 +27,12 @@ function($scope, $state){
 	$scope.scrnIndex = 1;
 	$scope.prev = function() {
 		$scope.scrnIndex--;
-		if($scope.scrnIndex == 0) $scope.scrnIndex = 4;
+		if($scope.scrnIndex == 0) $scope.scrnIndex = 5;
 		$scope.showScrn($scope.scrnIndex);
 	}
 	$scope.next = function() {
 		$scope.scrnIndex++;
-		if($scope.scrnIndex == 5) $scope.scrnIndex = 1;
+		if($scope.scrnIndex == 6) $scope.scrnIndex = 1;
 		$scope.showScrn($scope.scrnIndex);
 	}
 	$scope.showScrn = function(index) {
@@ -38,6 +41,7 @@ function($scope, $state){
 		else if(index == 2) $('#scrn2').addClass("active");
 		else if(index == 3) $('#scrn3').addClass("active");
 		else if(index == 4) $('#scrn4').addClass("active");
+		else if(index == 5) $('#scrn5').addClass("active");
 	}
 	
 	$scope.questions = [
@@ -64,6 +68,11 @@ function($stateProvider, $urlRouterProvider) {
 	.state('about', {
 		url: '/about',
 		templateUrl: '/about.html',
+		controller: 'MainCtrl'
+	})
+	.state('blog', {
+		url: '/blog',
+		templateUrl: '/blog.html',
 		controller: 'MainCtrl'
 	})
 	.state('faq', {

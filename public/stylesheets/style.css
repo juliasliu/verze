@@ -1,7 +1,6 @@
 body {
   padding: 0px;
   font: 12px Roboto, Helvetica, Arial, sans-serif;
-  letter-spacing: 2px;
 }
 
 a {
@@ -46,6 +45,7 @@ a:focus, a:hover {
 	font-size: 2em;
 	font-weight: bold;
 	font-family: 'Grand Hotel', cursive;
+	letter-spacing: 2px;
 }
 
 .header-tab .app-icon {
@@ -88,10 +88,11 @@ a:focus, a:hover {
 .page .subtitle {
 	position: relative;
     top: 150px;
-    width: 50%;
+    width: 80%;
     margin: auto;
     padding: 20px 20px 50px 20px;
 	font-size: 1.25em;
+	line-height: 24px;
 }
 
 .page .app-store {
