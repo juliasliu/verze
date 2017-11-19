@@ -17,7 +17,8 @@
 				<span class="header-tab" id="home-tab" ng-click="go('home')" class="navbar-brand"><img src="../public/images/icon.png" class="app-icon">Verze</span>
 			</div>
 			<ul class="navbar-header nav navbar-nav">
-				<!-- <li class="header-tab" id="about-tab"><span ng-click="go('about')">About</span></li> -->
+				<li class="header-tab" id="about-tab"><span ng-click="go('about')">About</span></li>
+				<li class="header-tab" id="blog-tab"><span ng-click="go('blog')">Blog</span></li>
 				<li class="header-tab" id="faq-tab"><span ng-click="go('faq')">FAQ</span></li>
 				<li class="header-tab" id="contact-tab"><span ng-click="go('contact')">Contact</span></li>
 			</ul>
@@ -25,16 +26,44 @@
 	</nav>
 	<ui-view></ui-view>
 	<script type="text/ng-template" id="/home.html">
-		<p>Under construction at the moment. Check back later!</p>
+		<div class="page">
+			<div class="bg"></div>
+			<div class="col-xs-8">
+				<div class="title main-title">Calm. Ambience. Dreams.</div>
+				<div class="subtitle">Verze is the perfect app for you to jumpstart on that language you always wanted to learn.
+With interactive flashcards that convey the definition, pronunciation and visual representation of the phrase, responsive quizzes
+and games to stir your brain, and an establishment of a community of online users intertwined by social connections, Verze helps
+you learn the basics quickly, effortlessly, and joyfully.</div>
+				<a href="https://itunes.apple.com/us/app/dreamemo/id1248719800?ls=1&mt=8"><img src="../public/images/available-on-app-store.png" class="app-store"></a>
+			</div>
+			<div class="col-xs-4">
+				<img src="../public/images/screenshot1.png" class="active screenshot" id="scrn1">
+				<img src="../public/images/screenshot2.png" class="screenshot" id="scrn2">
+				<img src="../public/images/screenshot3.png" class="screenshot" id="scrn3">
+				<img src="../public/images/screenshot4.png" class="screenshot" id="scrn4">
+				<img src="../public/images/screenshot5.png" class="screenshot" id="scrn4">
+				<div class="scrn-buttons">
+					<button type="button" class="scrn-btn" ng-click="prev()"><img src="../public/images/prev.png"></button>
+					<button type="button" class="scrn-btn" ng-click="next()" style="left: 250px;"><img src="../public/images/next.png"></button>
+				</div>
+			</div>
+		</div>
 	</script>
 	<script type="text/ng-template" id="/about.html">
+		<p>Under construction at the moment. Check back later!</p>
+	</script>
+	<script type="text/ng-template" id="/blog.html">
 		<p>Under construction at the moment. Check back later!</p>
 	</script>
 	<script type="text/ng-template" id="/faq.html">
 		<p>Under construction at the moment. Check back later!</p>
 	</script>
 	<script type="text/ng-template" id="/contact.html">
-		<p>Under construction at the moment. Check back later!</p>
+		<div class="page">
+			<div class="bg"></div>
+			<div class="title title-left">Contact</div>
+			<div class="contact">Email: <a href="mailto:verze.help@gmail.com">verze.help@gmail.com<a></div>
+		</div>
 	</script>
   </body>
 </html>
