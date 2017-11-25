@@ -79,10 +79,6 @@ a:focus, a:hover {
     top: 150px;
 }
 
-.page .title.title-left {
-	text-align: left;
-}
-
 .page .subtitle {
 	position: relative;
     top: 150px;
@@ -172,7 +168,7 @@ a:focus, a:hover {
 	position: relative;
     top: 100px;
     margin: 0 15%;
-    padding: 40px 20px;
+    padding: 40px;
     background: rgba(0, 0, 0, 0.25);
     border-radius: 5px;
 }

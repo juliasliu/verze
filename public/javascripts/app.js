@@ -71,7 +71,9 @@ function($scope, $state){
 			}, 10000);
 		}
 	}
-	$scope.initializeSlideshow();
+//	$(document).ready(function() {
+//		$scope.initializeSlideshow();
+//	})
 }]);
 
 app.config([
