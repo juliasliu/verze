@@ -44,14 +44,34 @@ function($scope, $state){
 		else if(index == 5) $('#scrn5').addClass("active");
 	}
 	
-	$scope.questions = [
-		{question: "How do I create an account?", answer: "Before you create an account, make sure to have the app downloaded. Currently, it is only available on the Apple iPhone App Store. Once you have it downloaded, you can register with your full name, username, email, and password."},
-		{question: "How do I record an entry in my dream journal?", answer: "There are three buttons on the bottom. Click on the rightmost one that says 'Memo' underneath. Make sure to go to the tab that says 'Today' at the top. Then you can record whatever you want."},
-		{question: "How do I see my entries?", answer: "When you are in the 'Memo' modal, click on the tab at the top that says 'Past.' It will show all the entries that you have made in your dream journal."},
-		{question: "How do I edit my entries the next day?", answer: "Unfortunately, you can't. You have until 11:59 PM UTC of the same day to edit an entry before it is permanent. Be careful of the timezone!"},
-		{question: "How do I change my username or email or delete my account?", answer: "Sorry, that feature is unavailable yet."},
-		{question: "How do I change the background and the sounds?", answer: "In the home page, there are three buttons on the bottom. Click on the middle one that says 'Change' underneath to switch the scenes to the one you prefer."}
+	$scope.hellos = [
+		{ text: "Hello!" },
+		{ text: "¡Hola!" },
+		{ text: "你好!" },
+		{ text: "Bonjour!" },
+		{ text: "こんにちは！" },
+		{ text: "Hallo!" },
+		{ text: "안녕!" },
+		{ text: "Ciao!" },
+		{ text: "नमस्कार!" },
+		{ text: "Здравствуйте!" }
 	]
+	
+	$scope.initializeSlideshow = function() {
+		if($scope.hellos.length > 1) {
+			$(".slideshow > div:gt(0)").hide();
+
+			setInterval(function() {
+				$('.slideshow > div:first')
+				.fadeOut(1000)
+				.next()
+				.fadeIn(1000)
+				.end()
+				.appendTo('.slideshow');
+			}, 10000);
+		}
+	}
+	$scope.initializeSlideshow();
 }]);
 
 app.config([

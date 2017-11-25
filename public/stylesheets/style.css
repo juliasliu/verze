@@ -156,3 +156,20 @@ a:focus, a:hover {
 .page p {
 	font-size: 16px;
 }
+
+.blog-post {
+	position: relative;
+    top: 100px;
+    margin: 0 15%;
+    padding: 40px 20px;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+
+.blog-post .timestamp {
+	color: rgba(255, 255, 255, 0.75);
+}
+
+.blog-post .blog-title {
+	padding-bottom: 40px;
+}
