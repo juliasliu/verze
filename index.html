@@ -17,7 +17,7 @@
 				<span class="header-tab" id="home-tab" ng-click="go('home')" class="navbar-brand"><img src="../public/images/icon.png" class="app-icon">Verze</span>
 			</div>
 			<ul class="navbar-header nav navbar-nav">
-				<li class="header-tab" id="about-tab"><span ng-click="go('about')">About</span></li>
+				<!-- <li class="header-tab" id="about-tab"><span ng-click="go('about')">About</span></li> -->
 				<li class="header-tab" id="blog-tab"><span ng-click="go('blog')">Blog</span></li>
 				<!-- <li class="header-tab" id="faq-tab"><span ng-click="go('faq')">FAQ</span></li> -->
 				<li class="header-tab" id="contact-tab"><span ng-click="go('contact')">Contact</span></li>
@@ -31,7 +31,7 @@
 			<div class="col-xs-8">
 				<div class="title main-title">Learn languages like never before.</div>
 				<div class="slideshow">
-					<div class="slide">
+					<div class="slide" ng-repeat="hello in hellos">
 						<div>{{ hello.text }}</div>
 					</div>
 				</div>
@@ -50,17 +50,17 @@
 			</div>
 		</div>
 	</script>
-	<script type="text/ng-template" id="/about.html">
+	<!-- <script type="text/ng-template" id="/about.html">
 		<div class="page">
 			<div class="bg"></div>	
-			<div class="title title-left">About</div>	
+			<div class="title">About</div>	
 				<p>With interactive flashcards that convey the definition, pronunciation and visual representation of the phrase, responsive quizzes and games to stir your brain, and an establishment of a community of online users intertwined by social connections, Verze helps you learn the basics quickly, effortlessly, and joyfully.</p>
 		</div>
-	</script>
+	</script> -->
 	<script type="text/ng-template" id="/blog.html">
 		<div class="page">
 			<div class="bg"></div>	
-			<div class="title title-left">Blog</div>	
+			<div class="title">Blog</div>	
 				<div class="blog-post">
 					<p class="timestamp">11.25.17</p>
 					<h2 class="blog-title">Verze on the App Store!</h2>
@@ -79,7 +79,7 @@
 	<script type="text/ng-template" id="/contact.html">
 		<div class="page">
 			<div class="bg"></div>
-			<div class="title title-left">Contact</div>
+			<div class="title">Contact</div>
 			<p class="contact">Email: <a href="mailto:verze.help@gmail.com">verze.help@gmail.com</a></p>
 		</div>
 	</script>

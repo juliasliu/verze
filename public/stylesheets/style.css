@@ -93,6 +93,18 @@ a:focus, a:hover {
 	line-height: 24px;
 }
 
+.page .slideshow {
+	width: 80%;
+	height: 30%;
+}
+
+.page .slideshow .slide {
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	height: 30%;
+}
+
 .page .app-store {
 	position: relative;
     top: 150px;
@@ -150,7 +162,6 @@ a:focus, a:hover {
     top: 100px;
     padding: 15px 50px;
     color: #fff;
-    text-align: left;
 }
 
 .page p {
