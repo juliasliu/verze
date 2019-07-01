@@ -2,7 +2,7 @@
 
 Verze helps users learn a foreign language through flashcards and interactive games to review and test your vocabulary. Users can also socialize with others and create their own courses and decks.
 
-Note: This repository does not contain any mobile app, web app, or server code.
+Note: This repository only contains the mobile app code, not the server or web app code.
 
 ## Check it out
 
