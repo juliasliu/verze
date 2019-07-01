@@ -1,0 +1,59 @@
+<ion-view view-title="Edit Deck">
+	<ion-nav-bar class="bar-balanced">
+	</ion-nav-bar>
+	<ion-nav-buttons side="primary">
+		<button type="button" ng-click="showCancelOptions('deck')" class="btn"><i class="ion-close" style="font-size: 2em;"></i></button>
+	</ion-nav-buttons>
+	<ion-content>
+		<form class="create-form" ng-submit="updateDeckContent()">
+						<div class="form-group">
+				<label for="name">Name of Deck</label>
+				<input type="text" class="form-control" id="name" placeholder="Name" ng-model="deck.content.name"></input>
+			</div>
+			<div class="form-group">
+				<label for="deck-course">Course</label>
+				<button type="button" class="btn addDeckCourse" ng-click="openAddCoursePopover($event)"><i class="ion-help-circled"></i></button>
+				<select name="Course" class="form-control" id="deck-course" ng-model="deck.content.course">
+					<option value=null>None</option>
+					<option ng-repeat="course in myCourses | authoredBy: currentUser.username" value="{{ course.content }}">{{ course.content.name }}</option>
+				</select>
+			</div>
+			<div class="form-group">
+					<label for="lang1">Language 1</label>
+					<select name="Language1" class="form-control" id="lang1" ng-model="deck.content.lang1" ng-disabled="deck.content.course != 'null'">
+						<option ng-repeat="lang in languages" value="{{lang.name}}">{{lang.name}}</option>
+					</select>
+			</div>
+			<div class="form-group">
+					<label for="lang2">Language 2</label>
+					<select name="Language2" class="form-control" id="lang2" ng-model="deck.content.lang2" ng-disabled="deck.content.course != 'null'">
+						<option ng-repeat="lang in languages" value="{{lang.name}}">{{lang.name}}</option>
+					</select>
+			</div>
+			<div class="form-group">
+				<!-- <label for="categories">Categories</label>
+				<select name="Categories" class="form-control" id="categories" ng-model="deck.content.categories">
+					<option ng-repeat="category in categories" value="{{ category.name }}">{{ category.name }}</option>
+				</select> -->
+				<label class="item item-input item-select my-select">
+					<div class="input-label">Categories</div>
+					<select ng-model="deck.content.categories" multiple ng-disabled="deck.content.course != 'null'">
+						<option ng-repeat="category in categories" value="{{ category.name }}">{{ category.name }}</option>
+					</select>
+					<!-- {{ card.categories }} -->
+			    </label>
+			</div>
+			<div class="form-group">
+				<label for="background">Image</label>
+				<div>
+					<button type="button" class="btn btn-primary" ng-click="showMediaOptions('deck')">Upload</button>
+				</div>
+			</div>
+			<div style="text-align: center">
+				<img ng-src="{{ deck.content.image }}" style="height:200px; padding: 5px 5px 5px 5px;"/>
+			</div>
+			<button type="submit" class="btn btn-success btn-full-stretch">Update Deck</button>
+			<button type="button" class="btn btn-danger btn-full-stretch" ng-click="showDeleteDeck()">Delete Deck</button>
+		</form>
+	</ion-content>
+</ion-view>

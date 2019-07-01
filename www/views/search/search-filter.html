@@ -1,0 +1,28 @@
+<ion-modal-view>
+	<ion-header-bar class="bar-balanced">
+		<h1 class="title header-title">Filter</h1>
+		<div class="secondary-header search-header">
+			<button class="btn btn-primary" type="button" ng-click="filter()">Browse</button>
+		</div>
+	</ion-header-bar>
+	<ion-content>
+  		<div class="list">
+			<div class="list-header">Filter</div>
+			<div class="item item-icon-left">
+			  	<i class="icon ion-heart"></i>
+			  	<label for="loves">Loves</label>
+			  	<input type="checkbox" id="loves" value="loves" ng-model="filterVars.languages">
+			</div>
+			<div class="item item-icon-left">
+			  	<i class="icon ion-plus-round"></i>
+			  	<label for="saves">Saves</label>
+			  	<input type="checkbox" id="saves" value="saves" ng-model="filterVars.categories">
+			</div>
+			<div class="item item-icon-left">
+			  	<i class="icon ion-person"></i>
+			  	<label for="newest">Newest</label>
+			  	<input type="checkbox" id="newest" value="newest" ng-model="filterVars.keywords">
+			</div>
+		</div>
+	</ion-content>
+</ion-modal-view>

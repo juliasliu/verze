@@ -1,0 +1,73 @@
+<ion-view view-title="Create Deck">
+	<ion-nav-bar class="bar-balanced">
+	</ion-nav-bar>
+	<ion-nav-buttons side="primary">
+		<button type="button" ng-click="showCancelOptions('deck')" class="btn"><i class="ion-close" style="font-size: 2em;"></i></button>
+	</ion-nav-buttons>
+	<ion-nav-buttons side="secondary">
+		<button type="submit" ng-click="addDeck()" class="btn"><i class="ion-paper-airplane" style="font-size: 2em;"></i></button>
+	</ion-nav-buttons>
+	<ion-content class="create-tab">
+		<form class="create-form">
+			<div class="form-group">
+				<label for="name">Name of Deck</label>
+				<input type="text" class="form-control" id="name" placeholder="Name" ng-model="deck.name"></input>
+			</div>
+			<div class="form-group">
+				<label for="deck-course">Course</label>
+				<button type="button" class="btn addDeckCourse" ng-click="openAddCoursePopover($event)"><i class="ion-help-circled"></i></button>
+				<select name="Course" class="form-control" id="deck-course" ng-model="deck.course">
+					<option value=null>None</option>
+					<option ng-repeat="course in myCourses | authoredBy: currentUser.username" value="{{ course.content }}">{{ course.content.name }}</option>
+				</select>
+			</div>
+			<div class="form-group">
+					<label for="lang1">Language 1</label>
+					<select name="Language1" class="form-control" id="lang1" ng-model="deck.lang1" ng-disabled="deck.course != 'null'">
+						<option ng-repeat="lang in languages" value="{{lang.name}}">{{lang.name}}</option>
+					</select>
+			</div>
+			<div class="form-group">
+					<label for="lang2">Language 2</label>
+					<select name="Language2" class="form-control" id="lang2" ng-model="deck.lang2" ng-disabled="deck.course != 'null'">
+						<option ng-repeat="lang in languages" value="{{lang.name}}">{{lang.name}}</option>
+					</select>
+			</div>
+			<div class="form-group">
+				<!-- <label for="categories">Categories</label>
+				<select name="Categories" class="form-control" id="categories" ng-model="deck.categories">
+					<option ng-repeat="category in categories" value="{{ category.name }}">{{ category.name }}</option>
+				</select> -->
+				<label class="item item-input item-select my-select">
+					<div class="input-label">Categories</div>
+					<select ng-model="deck.categories" multiple ng-disabled="deck.course != 'null'">
+						<option ng-repeat="category in categories" value="{{ category.name }}">{{ category.name }}</option>
+					</select>
+					<!-- {{ card.categories }} -->
+			    </label>
+			</div>
+			<!-- <div class="form-group">
+				<label for="color">Color</label>
+				<div class="color" ng-model="deck.color">
+					<button type="button" class="color-btn black" ng-click="changeDeckColor('black')" style="background: #000;"><i class="ion-checkmark"></i></button>
+					<button type="button" class="color-btn red" ng-click="changeDeckColor('red')" style="background: #ff0000;"><i class="ion-checkmark"></i></button>
+					<button type="button" class="color-btn orange" ng-click="changeDeckColor('orange')" style="background: #ff6600;"><i class="ion-checkmark"></i></button>
+					<button type="button" class="color-btn yellow" ng-click="changeDeckColor('yellow')" style="background: #ffe440;"><i class="ion-checkmark"></i></button>
+					<button type="button" class="color-btn green" ng-click="changeDeckColor('green')" style="background: #00cc00;"><i class="ion-checkmark"></i></button>
+					<button type="button" class="color-btn blue" ng-click="changeDeckColor('blue')" style="background: #3399ff;"><i class="ion-checkmark"></i></button>
+					<button type="button" class="color-btn purple" ng-click="changeDeckColor('purple')" style="background: #cc00cc;"><i class="ion-checkmark"></i></button>
+					<button type="button" class="color-btn brown" ng-click="changeDeckColor('brown')" style="background: #996600;"><i class="ion-checkmark"></i></button>
+				</div>
+			</div> -->
+			<div class="form-group">
+				<label for="background">Image</label>
+				<div>
+					<button type="button" class="btn btn-primary" ng-click="showMediaOptions('deck')">Upload</button>
+				</div>
+			</div>
+			<div style="text-align: center">
+				<img ng-src="{{ deck.image }}" style="height:200px; padding: 5px 5px 5px 5px;"/>
+			</div>
+		</form>
+	</ion-content>
+</ion-view>

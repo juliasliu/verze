@@ -1,0 +1,33 @@
+<ion-modal-view>
+	<ion-header-bar>
+		<h1 class="title">Flag Content</h1>
+		<div class="secondary-header">
+			<button class="btn" ng-click="closeFlag()"><i class="ion-close" style="font-size: 2em;"></i></button>
+		</div>
+	</ion-header-bar>
+	<ion-content>
+		<div class="login-form">
+			<form ng-submit="flagContent()">
+				<div>You are flagging because of objectionable content, such as images containing nudity, pornography, graphic violence or other explicit media content.
+				You may also report inappropriate usage of profanity or other offensive speech or text. We respect the privacy and rights of all users and appreciate your help in
+				helping us make Verze a safer place for everyone.</div><br>
+				<div class="form-group" style="text-align: left;">
+					<label for="description">Description of Problem</label>
+					<textarea class="form-control" placeholder="Please leave a detailed message about the problem." id="description"
+						ng-model="problem.description"></textarea>
+				</div>
+				<div class="form-group" style="text-align: left;">
+					<label for="email">Email Address</label>
+					<textarea class="form-control" placeholder="The email may be used for further inquiry about the problem." id="email"
+						ng-model="problem.email"></textarea>
+				</div>
+				<div class="form-group" style="text-align: left;">
+					<label for="qcc">Questions, Comments, Concerns?</label>
+					<textarea class="form-control" placeholder="Feel free to complain, suggest, or ask about anything." id="qcc"
+						ng-model="problem.extra"></textarea>
+				</div>
+			<button type="submit" class="btn btn-primary btn-full-stretch">Flag Content</button>
+			</form>
+		</div>
+	</ion-content>
+</ion-modal-view>

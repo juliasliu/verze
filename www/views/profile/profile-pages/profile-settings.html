@@ -1,0 +1,38 @@
+<ion-modal-view>
+	<ion-header-bar class="bar-balanced">
+		<h1 class="title">Edit Profile</h1>
+		<button class="btn" ng-click="closeProfileModal()" style="font-size: 1.15em;">Done</button>
+	</ion-header-bar>
+	<ion-content>
+		<div class="list profile-edit-list">
+			<div class="list-header">Basic Information</div>
+		  <div class="item item-icon-left">
+		  	<i class="icon ion-person"></i><input type="text" placeholder="First Name" ng-model="currentUser.firstname"/>
+		  </div>
+		  <div class="item item-icon-left">
+		  	<i class="icon ion-person"></i><input type="text" placeholder="Last Name" ng-model="currentUser.lastname"/>
+		  </div>
+		  <div class="item item-icon-left item-input item-select" style="padding: 20px;">
+		  	<i class="icon ion-location"></i>
+		  	<select ng-model="currentUser.country">
+				<option ng-repeat="country in countries" value="{{ country.name }}">{{ country.name }}</option>
+			</select>
+		  </div>
+		  <div class="item item-icon-left">
+		  	<i class="icon ion-link"></i><input type="text" ng-model="currentUser.website" placeholder="Website"/>
+		  </div>
+		  <div class="item item-icon-left">
+		  	<i class="icon ion-compose"></i><textarea rows="2" cols="75" maxlength="150" ng-model="currentUser.caption" placeholder="Caption"></textarea>
+		  </div>
+		</div>
+		<div class="list-header">Private Information</div>
+		<div class="list profile-edit-list">
+		  <div class="item item-icon-left">
+		  	<i class="icon ion-email"></i><input type="email" ng-model="currentUser.email"/>
+		  </div>
+		  <div class="item item-icon-left">
+		  	<i class="icon ion-iphone"></i><input type="text" ng-model="currentUser.phone" placeholder="Phone #"></textarea>
+		  </div>
+		</div>
+	</ion-content>
+</ion-modal-view>

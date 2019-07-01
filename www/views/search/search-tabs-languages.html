@@ -1,0 +1,10 @@
+<!-- <ion-scroll direction="y"> -->
+	<div class="list"> <!-- ui-sref="tabs.searchLanguage({ language: language.name })" -->
+		 <div class="list-header">All Languages</div>
+		 <a ng-repeat="language in languages" class="item item-avatar" ng-click="onLanguageClick(language.name)">
+	 		<img ng-src="{{ language.image }}">
+		   	<p class="item-right"><i class="ion-chevron-right"></i></p>
+	  		<h2>{{ language.name }}</h2>
+		 </a>
+	</div>
+<!-- </ion-scroll> -->

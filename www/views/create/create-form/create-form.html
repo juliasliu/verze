@@ -1,0 +1,39 @@
+<ion-view view-title="Create Card">
+	<ion-nav-bar class="bar-balanced">
+	</ion-nav-bar>
+	<ion-nav-buttons side="primary">
+		<button type="button" ng-click="showCancelOptions('card')" class="btn"><i class="ion-close" style="font-size: 2em;"></i></button>
+	</ion-nav-buttons>
+	<ion-nav-buttons side="secondary">
+		<button type="button" ng-click="addCard()" class="btn"><i class="ion-paper-airplane" style="font-size: 2em;"></i></button>
+	</ion-nav-buttons>
+	<ion-content class="edit-panel create-tab">
+		<card>
+				<front>
+					<card-header></card-header>
+					<front-body>
+						<social-buttons></social-buttons>
+					</front-body>
+				</front>
+				<back>
+					<card-header></card-header>
+					<back-body>
+						<social-buttons></social-buttons>
+					</back-body>
+				</back>
+		</card>
+  		<div>
+			<ul class="pagination pagination-lg edit-toolbar">
+			    <li class="col-xs-2 btn btn-edit btn-edit-info active" ng-click="changeTemplate('info')"><i class="ion-folder" style="font-size: 1.5em;"></i></li>
+			    <li class="col-xs-2 btn btn-edit btn-edit-text" ng-click="changeTemplate('text')"><i class="ion-quote" style="font-size: 1.5em; margin: 5px;"></i></li>
+			    <li class="col-xs-2 btn btn-edit btn-edit-style" ng-click="changeTemplate('style')"><i class="ion-paintbrush" style="font-size: 1.5em;"></i></li>
+			    <li class="col-xs-2 btn btn-edit btn-edit-media" ng-click="changeTemplate('media')"><i class="ion-images" style="font-size: 1.5em;"></i></li>
+			    <li class="col-xs-2 btn btn-edit btn-edit-audio" ng-click="changeTemplate('audio')"><i class="ion-volume-high" style="font-size: 1.5em;"></i></li>
+			    <li class="col-xs-2 btn btn-edit btn-edit-extra" ng-click="changeTemplate('extra')"><i class="ion-pound" style="font-size: 1.5em;"></i></li>
+			</ul>
+		</div>
+		<div class="edit-content">
+			<ng-include src="template"></ng-include>
+		</div>
+	</ion-content>
+</ion-view>

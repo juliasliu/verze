@@ -1,0 +1,20 @@
+<div class="instructions">Type the translation</div>
+<div class="phrase" ng-hide="side.checked">
+	{{ randomCard.frontphrase }}
+</div>
+<div class="phrase" ng-show="side.checked">
+	{{ randomCard.backphrase }}
+</div>
+<div class="choices" ng-hide="side.checked">
+	<textarea cols="40" rows="2" class="form-control spell-form" placeholder="Translation" ng-model="answer" readonly disabled></textarea>
+	<!-- <input type="text" class="form-control spell-form" placeholder="Translation" ng-model="answer" readonly></input> -->
+	<!-- <button type="button" class="btn btn-success" ng-click="checkChoice(answer, 'front')">Enter</button> -->
+</div>
+<div class="choices" ng-show="side.checked">
+	<textarea cols="40" rows="2" class="form-control spell-form" placeholder="Translation" ng-model="answer" readonly disabled></textarea>
+	<!-- <input type="text" class="form-control spell-form" placeholder="Translation" ng-model="answer" readonly></input> -->
+	<!-- <button type="button" class="btn btn-success" ng-click="checkChoice(answer, 'back')">Enter</button> -->
+</div>
+<div class="keyboard-container">
+	<ng-include src="keyboardTemplate"></ng-include>
+</div>

@@ -1,0 +1,16 @@
+<ion-popover-view style="height: 180px; overflow-y: scroll;">
+    <ion-header-bar>
+      <h1 class="title">Save to Deck</h1>
+    </ion-header-bar>
+    <ion-content>
+    <ion-refresher pulling-text="Pull to refresh..." on-refresh="refreshDecks()"></ion-refresher>	
+    	<div class="list popover-list">
+    		<div class="item" ng-repeat="deck in myDecks | authoredBy: currentUser.username">
+		      <label for="deck">{{ deck.content.name }}</label>
+		      <input type="checkbox" id="deck" class="item-right"
+		      		ng-click="saveToDeck(deck.content)"
+	      			ng-checked="deck.savedCard">
+		    </div>
+	    </div>
+    </ion-content>
+ </ion-popover-view>
