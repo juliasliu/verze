@@ -1,0 +1,17 @@
+<h4>Extra</h4>
+<div class="form-group row">
+	<label class="item item-input item-select my-select">
+		<div class="input-label">Categories</div>
+		<select ng-model="card.categories" multiple ng-disabled="card.deck != 'null'">
+			<option ng-repeat="category in categories" value="{{ category.name }}">{{ category.name }}</option>
+		</select>
+    </label>
+</div>
+<div class="form-group row">
+	<label for="tags"
+		class="col-xs-3 form-control-label">Tags</label>
+	<div class="input-group col-xs-9">
+		<input type="text" class="form-control" placeholder="Add tags"
+			id="tags" data-role="tagsinput" value=""></input>
+	</div>
+</div>

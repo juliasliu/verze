@@ -1,0 +1,15 @@
+<div class="empty-tab" ng-show="emptyDecks">
+	<i class="ion-sad-outline" style="font-size: 5em;"></i>
+	<h2>You Don't Have Any Cards.</h2>
+	<p>Get started by creating your own cards or saving other cards in
+		the uniVerze.</p>
+</div>
+<div ng-hide="emptyDecks" class="course-view-container">
+	<ul>
+		<ul ng-repeat="deck in course.decks">
+			<li ng-repeat="card in deck.cards">
+				<preview-card></preview-card>
+			</li>
+		</ul>
+	</ul>
+</div>

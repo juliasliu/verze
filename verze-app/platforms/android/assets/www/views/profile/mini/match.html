@@ -1,0 +1,7 @@
+<div class="choices">
+	<ul>
+		<li ng-repeat="choice in deck.cards" style="display: inline-block;">
+			<div class="choice" ng-click="checkChoice(choice.backphrase)">{{ choice.backphrase }}</div>
+		</li>
+	</ul>
+</div>

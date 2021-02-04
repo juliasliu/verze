@@ -1,0 +1,23 @@
+<div class="start-page overlay">
+	<div class="register-login-page">
+		<div class="login-form">
+			<div class="title welcome-back-trans">Welcome Back
+			</div>
+				<form ng-submit="logIn()">
+					<div class="form-group login-form-group">
+						<label for="username" class="labels username-trans">Username</label>
+						<input type="text" class="form-control login-input" placeholder="Username" id="username"
+							ng-model="user.username" autocapitalize="off"></input>
+					</div>
+					<div class="form-group login-form-group">
+						<label for="password" class="labels password-trans">Password</label>
+						<input type="password" class="form-control login-input" placeholder="Password" id="password"
+							ng-model="user.password"></input>
+					</div>
+				<button type="submit" class="btn btn-success btn-full-stretch login-trans">Login</button>
+				<div class="register-login-bottom"><span class="no-account-yet-trans">No account yet?</span> <a ui-sref="getStarted" class="get-started-trans">Get Started</a></div>
+				</form>
+		</div>
+		<!-- <p class="caption">Statue of Liberty, New York</p> -->
+	</div>
+</div>

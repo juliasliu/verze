@@ -1,0 +1,37 @@
+<ion-popover-view class="card-options-popover">
+    <ion-content>
+    	<div class="list popover-list">
+	    	<div class="item toggle-show-card-item" ng-hide="browseMode" ng-click="toggleShowCardParts()">
+	    		<!-- <label for="pronunciation"> -->
+	    		Show pronunciation
+			  		<input type="checkbox" class="item-right" id="pronunciation" value="pronunciation" ng-model="showCardParts.showPronun">
+			  	<!-- </label> -->
+	    	</div>
+	    	<div class="item toggle-show-card-item" ng-hide="browseMode" ng-click="toggleShowCardParts()">
+	    		<!-- <label for="example"> -->
+	    		Show example
+			  		<input type="checkbox" class="item-right" id="example" value="example" ng-model="showCardParts.showExample">
+			  	<!-- </label> -->
+	    	</div>
+	    	<div class="item toggle-show-card-item" ng-hide="browseMode" ng-click="toggleShowCardParts()">
+	    		<!-- <label for="example"> -->
+	    		Show magic
+			  		<input type="checkbox" class="item-right" id="magic" value="magic" ng-model="showCardParts.showMagic">
+			  	<!-- </label> -->
+	    	</div>
+	    	<div class="item toggle-show-card-item" ng-hide="browseMode" ng-click="toggleShowCardParts()">
+	    		<!-- <label for="example"> -->
+	    		Show comments
+			  		<input type="checkbox" class="item-right" id="comments" value="comments" ng-model="showCardParts.showComments">
+			  	<!-- </label> -->
+	    	</div>
+	    	<div class="item" ng-show="browseMode" ng-click='onCardClick(card._id)'>View <i class="ion-eye item-right"></i></div>
+	    	<div class="item" ng-hide="browseMode" ng-click="showCardNotes()">Notes <i class="ion-clipboard item-right"></i></div>
+	    	<div class="item" ng-hide="browseMode || reviewMode || card.author.username != currentUser.username" ng-click="onEditCardClick(card._id)">Edit <i class="ion-edit item-right"></i></div>
+	    	<div class="item" ng-hide="browseMode || reviewMode || card.author.username != currentUser.username" ng-click="showDeleteCard()">Delete <i class="ion-trash-b item-right"></i></div>
+	    	<!-- <div class="item" ng-hide="reviewMode" ng-click="goToCardDeck()">Go to Deck <i class="ion-filing item-right"></i></div> -->
+	    	<!-- <div class="item" ng-click="showUnavailablePopover()">Share <i class="ion-share item-right"></i></div> -->
+	    	<div class="item" ng-hide="browseMode" ng-click="flagContent(card._id)">Flag <i class="ion-flag item-right"></i></div>
+	    </div>
+    </ion-content>
+ </ion-popover-view>

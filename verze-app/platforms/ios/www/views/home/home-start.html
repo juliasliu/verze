@@ -1,0 +1,39 @@
+<div class="home-start">
+	<h4>Get Started</h4>
+	<div class="list">
+		<div class="list-header">Courses</div>
+		<p class="list-description">Start on a course today to learn the basics</p>
+		<div class="course-list">
+			<li ng-repeat="course in recCourses">
+				<course></course>
+			</li>
+		</div>
+		<div class="list-header">Decks</div>
+		<p class="list-description">Scope out your favorite decks to study from</p>
+		<div class="deck-list">
+			<li ng-repeat="deck in recDecks">
+				<deck></deck>
+			</li>
+		</div>
+		<div class="list-header">Cards</div>
+		<p class="list-description">Learn some phrases to impress your friends</p>
+		<div class="deck-list">
+			<li ng-repeat="card in recCards">
+				<card>
+					<front>
+						<card-header></card-header>
+						<front-body>
+							<social-buttons></social-buttons>
+						</front-body>
+					</front>
+					<back>
+						<card-header></card-header>
+						<back-body>
+							<social-buttons></social-buttons>
+						</back-body>
+					</back>
+				</card>
+			</li>
+		</div>
+	</div>
+</div>

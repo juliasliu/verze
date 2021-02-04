@@ -1,0 +1,47 @@
+<ion-popover-view style="height: 220px; min-width: 400px;">
+    <ion-header-bar>
+      <h1 class="title">Learn Settings</h1>
+    </ion-header-bar>
+    <ion-content>
+    	<div class="list popover-list review-settings-list">
+	      <!-- <a class="item" ng-disabled="deckFinished" ng-click="shuffle()">Shuffle <i class="ion-shuffle item-right"></i></a> -->
+	    	
+		  <div class="list-header">Learning</div>
+		  <div class="item" ng-click="playCards()" ng-show="pausedCards">
+	      	Play <i class="ion-play item-right"></i>
+	      </div>
+	      <div class="item" ng-click="pauseCards()" ng-hide="pausedCards">
+	      	Pause <i class="ion-play item-right"></i>
+	      </div>
+	      <div class="item">
+	      	  {{ deck.content.lang1 }}
+		      <label class="switch">
+				  <input type="checkbox" class="language-switch" ng-model="vars.language">
+				  <div class="slider"></div>
+				</label>
+		      {{ deck.content.lang2 }}
+	      </div>
+	      <!-- <div class="item" ng-show="(finalMode && finalFinished) || (reviewFinalMode && reviewFinalFinished)">
+	      	  {{ course.content.lang1 }}
+		      <label class="switch">
+				  <input type="checkbox" class="language-switch" ng-model="vars.language">
+				  <div class="slider"></div>
+				</label>
+		      {{ course.content.lang2 }}
+	      </div> -->
+	      <!-- <div class="item">
+	      	  Screen keyboard
+		      <label class="switch">
+				  <input type="checkbox" class="keyboard-switch" ng-model="vars.keyboard">
+				  <div class="slider"></div>
+				</label>
+		      Embedded keyboard
+	      </div> -->
+	    	
+		  <div class="list-header">General</div>
+	      <div class="item" ng-click="resetDeck()">
+	      		Restart Deck <i class="ion-refresh item-right"></i>
+	      </div>
+	    </div>
+    </ion-content>
+ </ion-popover-view>

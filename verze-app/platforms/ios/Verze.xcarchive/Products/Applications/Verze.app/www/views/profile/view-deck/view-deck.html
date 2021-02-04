@@ -1,0 +1,78 @@
+<!-- <ion-modal-view ng-controller="DeckCourseCtrl" ng-init="init()">
+	<ion-header-bar class="bar-balanced">
+		<h1 class="title">Deck</h1>
+		<button class="btn" ng-click="closeDeck()"><i class="ion-close" style="font-size: 2em;"></i></button>
+	</ion-header-bar> -->
+<ion-view view-title="Deck">
+	<ion-nav-bar class="bar-balanced">
+		<ion-nav-back-button class="button-clear">
+			<i class="ion-arrow-left-b"></i> Back
+		</ion-nav-back-button>
+	</ion-nav-bar>
+	<ion-nav-buttons side="secondary">
+		<button type="button" ng-click="openDeckOptionsPopover($event)" class="btn" style="font-size: 1.5em;"><i class="ion-more"></i></button>
+	</ion-nav-buttons>
+	<ion-content class="deck-view">
+		<ion-refresher pulling-text="Pull to refresh..." on-refresh="refreshDeck(deck.content._id, false)"></ion-refresher>
+		<div class="deck-view-description" style='background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url({{ deck.content.image }})'>
+			<div class="deck-description">
+				<img class="lang-thumbnail" ng-src='{{ findLanguage(deck.content.lang1).image }}'>
+	        	<img class="lang-thumbnail" ng-src='{{ findLanguage(deck.content.lang2).image }}'>
+				<div class="deck-name">{{ deck.content.name }}</div>
+				<!-- <span class="deck-category" ng-repeat="category in deck.content.categories.slice(0, deck.content.categories.length-1)">{{ category }}, </span>
+				<span class="deck-category last">{{ deck.content.categories[deck.content.categories.length-1] }}</span>
+				<br> -->
+				<div class='deck-numcards'>{{ deck.content.cards.length }} card(s)</div>
+			</div>
+			<!-- <div class="deck-image">
+				<img ng-src="{{ deck.content.image }}">
+			</div> -->
+			<div class="deck-navbar">
+				<ul class="pagination deck-navbar-left">
+					<li>
+						<button class='btn' ng-click='openSaveDeckPopover($event)' ng-disabled='currentUser.username == deck.content.author.username'>
+							<i class='ion-plus-round'></i>
+							<p class='deck-social-count'>{{ deck.content.saved.length }}</p>
+						</button>
+					</li>
+				</ul>
+				<ul class="pagination deck-navbar-right">
+					<!-- <li><button type="button" ng-click="showUnavailablePopover($event)" class="btn"><i class="ion-share"></i></button></li> -->
+					<li>
+						<button class='btn mini-avatar' ui-sref='tabs.me({ username: deck.content.author.username })'>
+						<img ng-src='{{ deck.content.author.avatar }}'>
+						<p>@{{ deck.content.author.username }}</p>
+						</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="empty-tab" ng-show="emptyCardsInDeck && !editMode">
+			<i class="ion-sad-outline" style="font-size: 5em;"></i>
+			<h3>You Don't Have Any Cards In This Deck.</h3>
+			<p>Get started by creating your own cards in the deck.</p>
+		</div>
+		<div class="deck-view-container">
+			<ul class="card-list active">
+				<li ng-repeat="card in deck.content.cards">
+					<preview-card></preview-card>
+				</li>
+			</ul>
+			<ul class="phrase-list">
+				<li class="phrase" ng-repeat="card in deck.content.cards">
+					<div class="front-phrase">{{ card.frontphrase }}</div>
+					<div class="back-phrase">{{ card.backphrase }}</div>
+				</li>
+			</ul>
+		</div>
+	</ion-content>
+	<button type="button" class="btn deck-review-button" ng-click="showDeckCourseModes('deck')" ng-disabled="emptyCardsInDeck"><i class="ion-play"></i></button>
+	<div class='wrap deck-review-buttons'>
+  		<div class='content'>
+			<button type="button" class="btn" id="learn-btn" ng-click="deckCourseModeClicked('learn', 'deck')"><i class="ion-lightbulb"></i><div>Learn</div></button>
+			<button type="button" class="btn" id="review-btn" ng-click="deckCourseModeClicked('review', 'deck')" ng-disabled="!startedLearn"><i class="ion-loop"></i><div>Review</div></button>
+			<button type="button" class="btn" id="test-btn" ng-click="deckCourseModeClicked('test', 'deck')" ng-disabled="!finishedLearn"><i class="ion-document-text"></i><div>Test</div></button>
+  		</div>
+  	</div>
+<!-- </ion-modal-view> -->
+</ion-view>

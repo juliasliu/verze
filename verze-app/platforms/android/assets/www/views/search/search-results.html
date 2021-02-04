@@ -1,0 +1,37 @@
+<ion-view view-title="Browse">
+	<ion-nav-bar class="bar-balanced">
+		<ion-nav-back-button class="button-clear">
+			<i class="ion-arrow-left-b"></i> Back
+		</ion-nav-back-button>
+	</ion-nav-bar>
+	<ion-content>
+		<div>
+			<ion-refresher pulling-text="Pull to refresh..." on-refresh="refreshResults()"></ion-refresher>
+			<form ng-submit="search(query)" pretty-submit>
+				<div id="search-bar">
+				    <div class="item item-input-inset">
+				      <label class="item-input-wrapper">
+				        <i class="icon ion-search placeholder-icon"></i>
+				        <input type="search" class="search-bar" placeholder="Search cards, decks, courses, users, tags" ng-model="query">
+				        <button type="button" ng-click="cancelSearch()"><i class="icon ion-close-circled placeholder-icon item-right"></i></button>
+				      </label>
+				    </div>
+				</div>
+			</form>
+			<div class="panel search-results-panel-tabs">
+				<ul class="search-results-navbar nav nav-tabs">
+					<li class="active search-results-tab cards-tab" ng-click="switchResultsTab('Cards')">Cards</li>
+					<li class="search-results-tab decks-tab" ng-click="switchResultsTab('Decks')">Decks</li>
+					<li class="search-results-tab courses-tab" ng-click="switchResultsTab('Courses')">Courses</li>
+					<li class="search-results-tab users-tab" ng-click="switchResultsTab('Users')" ng-disabled="browseMode">Users</li>
+				</ul>
+			</div>
+			<div class="search-options">
+				<!-- <button type="button" class="btn" ng-click="openSearchView()">Views <i class="ion-eye"></i></button> -->
+				<button type="button" class="btn" ng-click="openSortBy()">Sort By <i class="ion-navicon-round"></i></button>
+				<!-- <button type="button" class="btn" ng-click="openFilter()">Filter <i class="ion-funnel"></i></button> -->
+			</div>
+			<ng-include src="searchTemplate"></ng-include>
+		</div>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,25 @@
+<ion-popover-view class="search-options-popover">
+	<ion-content>
+  		<div class="list search-options-list">
+			<div class="list-header">Filter</div>
+			<div class="item item-icon-left">
+			  	<i class="icon ion-heart"></i>
+			  	<label for="loves">
+			  		<input type="checkbox" id="loves" value="loves" name="fooby[1][]" ng-model="sortByVars.loves">
+			  	Loves</label>
+			</div>
+			<div class="item item-icon-left">
+			  	<i class="icon ion-plus-round"></i>
+			  	<label for="saves">
+			  		<input type="checkbox" id="saves" value="saves" name="fooby[1][]" ng-model="sortByVars.saves">
+			  	Saves</label>
+			</div>
+			<div class="item item-icon-left">
+			  	<i class="icon ion-clock"></i>
+			  	<label for="newest">
+			  		<input type="checkbox" id="newest" value="newest" name="fooby[1][]" ng-model="sortByVars.newest">
+			  	Newest</label>
+			</div>
+		</div>
+	</ion-content>
+</ion-popover-view>

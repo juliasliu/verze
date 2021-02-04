@@ -1,0 +1,17 @@
+<ion-tabs class="tabs-icon-top tabs-dark">
+	<ion-tab icon-on="ion-ios-home" icon-off="ion-ios-home-outline" ui-sref="tabs.home">
+		<ion-nav-view name="home-tab"></ion-nav-view>
+	</ion-tab>
+	<ion-tab icon-on="ion-ios-search-strong" icon-off="ion-ios-search" ui-sref="tabs.search">
+		<ion-nav-view name="search-tab"></ion-nav-view>
+	</ion-tab>
+	<ion-tab icon-on="ion-ios-plus" icon-off="ion-ios-plus" ng-click="openCreatePopover($event)">
+		<ion-nav-view name="create-tab"></ion-nav-view>
+	</ion-tab>
+	<ion-tab icon-on="ion-ios-chatbubble" icon-off="ion-ios-chatbubble-outline" ui-sref="tabs.chat">
+		<ion-nav-view name="chat-tab"></ion-nav-view>
+	</ion-tab>
+	<ion-tab icon-on="ion-ios-person" icon-off="ion-ios-person-outline" ui-sref="tabs.me">
+		<ion-nav-view name="me-tab"></ion-nav-view>
+	</ion-tab>
+</ion-tabs>

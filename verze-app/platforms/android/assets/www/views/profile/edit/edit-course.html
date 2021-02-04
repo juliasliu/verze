@@ -1,0 +1,61 @@
+<ion-view view-title="Edit Course">
+	<ion-nav-bar class="bar-balanced">
+	</ion-nav-bar>
+	<ion-nav-buttons side="primary">
+		<button type="button" ng-click="showCancelOptions('course')" class="btn"><i class="ion-close" style="font-size: 2em;"></i></button>
+	</ion-nav-buttons>
+	<ion-content>
+		<form class="create-form" ng-submit="updateCourseContent()">
+			<div class="form-group">
+				<label for="name">Name of Course</label>
+				<input type="text" class="form-control" id="name" placeholder="Name" ng-model="course.content.name"></input>
+			</div>
+			<div class="form-group">
+				<label for="caption">Caption</label>
+				<input type="text" class="form-control" id="caption" placeholder="Caption (100 char max)" ng-model="course.content.caption"></input>
+			</div>
+			<div class="form-group">
+					<label for="lang1">Language 1</label>
+					<select name="Language1" class="form-control" id="lang1" ng-model="course.content.lang1">
+						<option ng-repeat="lang in languages" value="{{lang.name}}">{{lang.name}}</option>
+					</select>
+			</div>
+			<div class="form-group">
+				<label for="lang2">Language 2</label>
+					<select name="Language2" class="form-control" id="lang2" ng-model="course.content.lang2">
+						<option ng-repeat="lang in languages" value="{{lang.name}}">{{lang.name}}</option>
+					</select>
+			</div>
+			<div class="form-group">
+				<label for="difficulty">Difficulty</label>
+				<select name="Difficulty" class="form-control" id="difficulty" ng-model="course.content.difficulty">
+					<option ng-repeat="level in levels" value="{{ level.name }}">{{ level.name }}</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<!-- <label for="categories">Categories</label>
+				<select name="Categories" class="form-control" id="categories" ng-model="deck.categories">
+					<option ng-repeat="category in categories" value="{{ category.name }}">{{ category.name }}</option>
+				</select> -->
+				<label class="item item-input item-select my-select">
+					<div class="input-label">Categories</div>
+					<select ng-model="course.content.categories" multiple>
+						<option ng-repeat="category in categories" value="{{ category.name }}">{{ category.name }}</option>
+					</select>
+					<!-- {{ card.categories }} -->
+			    </label>
+			</div>
+			<div class="form-group">
+				<label for="background">Image</label>
+				<div>
+					<button type="button" class="btn btn-primary" ng-click="showMediaOptions('course')">Upload</button>
+				</div>
+			</div>
+			<div style="text-align: center">
+				<img ng-src="{{ course.content.image }}" style="height:200px; padding: 5px 5px 5px 5px;"/>
+			</div>
+			<button type="submit" class="btn btn-success btn-full-stretch">Update Course</button>
+			<button type="button" class="btn btn-danger btn-full-stretch" ng-click="showDeleteCourse()">Delete Course</button>
+		</form>
+	</ion-content>
+</ion-view>

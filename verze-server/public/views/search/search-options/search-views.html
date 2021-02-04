@@ -1,0 +1,31 @@
+<ion-popover-view class="search-options-popover">
+	<ion-content>
+  		<div class="list search-options-list">
+			<div class="list-header">Views</div>
+			<div class="item item-icon-left">
+			  	<i class="icon ion-shuffle"></i>
+			  	<label for="flipped">
+			  		<input type="checkbox" id="flipped" value="flipped" name="flipped" ng-model="searchViewVars.flipped">
+			  	Flipped</label>
+			</div>
+			<!-- <div class="item item-icon-left">
+			  	<i class="icon ion-heart"></i>
+			  	<label for="card">
+			  		<input type="checkbox" id="card" value="card" name="views" ng-model="searchViewVars.card">
+			  	Full Card</label>
+			</div> -->
+			<div class="item item-icon-left">
+			  	<i class="icon ion-plus-round"></i>
+			  	<label for="preview">
+			  		<input type="checkbox" id="preview" value="preview" name="views" ng-model="searchViewVars.preview">
+			  	Preview</label>
+			</div>
+			<div class="item item-icon-left">
+			  	<i class="icon ion-clock"></i>
+			  	<label for="thumbnail">
+			  		<input type="checkbox" id="thumbnail" value="thumbnail" name="views" ng-model="searchViewVars.thumbnail">
+			  	Thumbnail</label>
+			</div>
+		</div>
+	</ion-content>
+</ion-popover-view>

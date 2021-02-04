@@ -1,0 +1,20 @@
+<div class="instructions animated bounceIn">Type the translation of what you hear</div>
+<div class="phrase dictation animated bounceIn" ng-hide="vars.language">
+	<i class="ion-volume-high" style="font-size: 2em;" ng-click="playAudio('front')"></i>
+</div>
+<div class="phrase dictation animated bounceIn" ng-show="vars.language">
+	<i class="ion-volume-high" style="font-size: 2em;" ng-click="playAudio('back')"></i>
+</div>
+<div class="choices animated bounceIn">
+	<textarea cols="40" rows="2" class="form-control spell-form" placeholder="Translation" ng-model="answer" readonly disabled></textarea>
+	<!-- <input type="text" class="form-control spell-form" placeholder="Translation" ng-model="answer" ng-virtual-keyboard autofocus></input> -->
+	<button type="button" class="btn btn-success enter" ng-click="checkChoice()">Enter</button>
+</div>
+<div class="keyboard-container animated bounceIn">
+	<ng-include src="keyboardTemplate"></ng-include>
+</div>
+<!-- <div class="keyboard-submit animated bounceIn">
+	<div class="key gray btn-success" ng-click="checkChoice()">
+    	<span>enter</span>
+    </div>
+</div> -->

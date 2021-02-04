@@ -1,0 +1,28 @@
+<ion-view view-title="" class="login-view">
+	<ion-nav-bar class="bar-transparent">
+		<ion-nav-back-button class="button-clear" side="primary">
+			<i class="ion-arrow-left-b"></i> Back
+		</ion-nav-back-button>
+	</ion-nav-bar>
+	<ion-content class="register-login-page" scroll="false">
+	<div class="login-form">
+		<div class="welcome-back">Welcome Back
+		</div>
+			<form ng-submit="logIn()">
+				<div class="form-group login-form-group">
+					<label for="username" class="login-labels">Username</label>
+					<input type="text" class="form-control login-input" placeholder="Username" id="username"
+						ng-model="user.username" autocapitalize="off"></input>
+				</div>
+				<div class="form-group login-form-group">
+					<label for="password" class="login-labels">Password</label>
+					<input type="password" class="form-control login-input" placeholder="Password" id="password"
+						ng-model="user.password"></input>
+				</div>
+			<button type="submit" class="btn btn-success btn-full-stretch">Login</button>
+			<div class="register-login-bottom">No account yet? <a ui-sref="getStarted">Get Started</a></div>
+			</form>
+		<p class="caption">Taj Mahal, India</p>
+	</div>
+	</ion-content>
+</ion-view>

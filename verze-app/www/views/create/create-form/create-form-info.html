@@ -1,0 +1,27 @@
+<h4>General</h4>
+<div class="form-group row">
+	<label for="card-deck" class="col-xs-2 form-control-label">Deck</label>
+	<button type="button" class="btn addDeckCourse addDeck" ng-click="openAddDeckPopover($event)"><i class="ion-help-circled"></i></button>
+	<select name="Deck" class="form-control" ng-model="card.deck" id="card-deck">
+		<option value=null>None</option>
+		<option ng-repeat="deck in myDecks | authoredBy: currentUser.username" value="{{ deck.content }}">{{ deck.content.name }}</option>
+	</select>
+</div>
+<div class="form-group row">
+	<label for="front-lang"
+		class="col-xs-5 form-control-label">Front</label>
+	<select name="Language"
+		class="form-control" id="front-lang"
+		ng-model="card.frontlang" ng-disabled="card.deck != 'null'">
+		<option ng-repeat="lang in languages" value="{{lang.name}}">{{lang.name}}</option>
+	</select>
+</div>
+<div class="form-group row">
+	<label for="back-lang"
+		class="col-xs-5 form-control-label">Back</label>
+	<select name="Language"
+		class="form-control" id="back-lang"
+		ng-model="card.backlang" ng-disabled="card.deck != 'null'">
+		<option ng-repeat="lang in languages" value="{{lang.name}}">{{lang.name}}</option>
+	</select>
+</div>

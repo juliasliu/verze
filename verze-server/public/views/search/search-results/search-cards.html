@@ -1,0 +1,23 @@
+<div class="empty-tab" ng-show="cards.length == 0">
+	<i class="ion-sad-outline" style="font-size: 5em;"></i>
+	<h3>There are no results.</h3>
+	<p>Sorry about that.</p>
+</div>
+<ul class="search-results-list search-cards-list">
+       <!-- <li class="inline" ng-repeat="card in (cards | sortBy:this)" ng-show="searchViewVars.card">
+       	<card>
+       		<front-body>
+				<social-buttons></social-buttons>
+			</front-body>
+			<back-body>
+				<social-buttons></social-buttons>
+			</back-body>
+       	</card>
+       </li> -->
+       <li class="inline" ng-repeat="card in (cards | sortBy:this)" ng-show="searchViewVars.preview">
+       	<preview-card></preview-card>
+       </li>
+       <li class="inline" ng-repeat="card in (cards | sortBy:this)" ng-show="searchViewVars.thumbnail">
+       	<thumbnail-card></thumbnail-card>
+       </li>
+</ul>

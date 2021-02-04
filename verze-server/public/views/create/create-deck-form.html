@@ -1,0 +1,76 @@
+		<form class="create-form">
+			<!-- <div class="edit-toolbar"> -->
+				<h3 ng-show="createDeckMode" class="create-deck-trans">Create Deck</h3>
+				<h3 ng-hide="createDeckMode" class="edit-deck-trans">Edit Deck</h3>
+				<button type="submit" ng-click="addDeck()" class="btn btn-primary submit-create-btn"><i class="ion-paper-airplane"></i></button>
+			<!-- </div> -->
+			<div class="form-group">
+				<label for="name" class="name-of-deck-trans">Name of Deck</label>
+				<input type="text" class="form-control" id="name" placeholder="Name" ng-show="createDeckMode" ng-model="deck.name"></input>
+				<input type="text" class="form-control" id="name" placeholder="Name" ng-hide="createDeckMode" ng-model="deck.content.name"></input>
+			</div>
+			<div class="form-group">
+				<label for="deck-course" class="course-trans">Course</label>
+				<button type="button" class="btn addDeckCourse" ng-click="openAddCoursePopover($event)"><i class="ion-help-circled"></i></button>
+				<select name="Course" class="form-control" id="deck-course" ng-show="createDeckMode" ng-model="deck.course">
+					<option value=null>None</option>
+					<option ng-repeat="course in myCourses | authoredBy: currentUser.username" value="{{ course.content }}">{{ course.content.name }}</option>
+				</select>
+				<select name="Course" class="form-control" id="deck-course" ng-hide="createDeckMode" ng-model="deck.content.course">
+					<option value=null>None</option>
+					<option ng-repeat="course in myCourses | authoredBy: currentUser.username" value="{{ course.content }}">{{ course.content.name }}</option>
+				</select>
+			</div>
+			<div class="form-group">
+					<label for="lang1" class="language-1-trans">Language 1</label>
+					<select name="Language1" class="form-control" id="lang1" ng-show="createDeckMode" ng-model="deck.lang1" ng-disabled="deck.course != 'null'">
+						<option ng-repeat="lang in languages" value="{{lang.name}}">{{updateLang(lang.name)}}</option>
+					</select>
+					<select name="Language1" class="form-control" id="lang1" ng-hide="createDeckMode" ng-model="deck.content.lang1" ng-disabled="deck.content.course != 'null'">
+						<option ng-repeat="lang in languages" value="{{lang.name}}">{{updateLang(lang.name)}}</option>
+					</select>
+			</div>
+			<div class="form-group">
+					<label for="lang2" class="language-2-trans">Language 2</label>
+					<select name="Language2" class="form-control" id="lang2" ng-show="createDeckMode" ng-model="deck.lang2" ng-disabled="deck.course != 'null'">
+						<option ng-repeat="lang in languages" value="{{lang.name}}">{{updateLang(lang.name)}}</option>
+					</select>
+					<select name="Language2" class="form-control" id="lang2" ng-hide="createDeckMode" ng-model="deck.content.lang2" ng-disabled="deck.content.course != 'null'">
+						<option ng-repeat="lang in languages" value="{{lang.name}}">{{updateLang(lang.name)}}</option>
+					</select>
+			</div>
+			<div class="form-group">
+				<label for="categories" class="categories-trans">Categories</label>
+					<select ng-show="createDeckMode" ng-model="deck.categories" multiple ng-disabled="deck.course != 'null'" id="categories">
+						<option ng-repeat="category in categories" value="{{ category.name }}">{{updateLang(category.name)}}</option>
+					</select>
+					<select ng-hide="createDeckMode" ng-model="deck.content.categories" multiple ng-disabled="deck.content.course != 'null'" id="categories">
+						<option ng-repeat="category in categories" value="{{ category.name }}">{{updateLang(category.name)}}</option>
+					</select>
+			</div>
+			<div class="form-group">
+				<label for="background" class="image-trans">Image</label>
+				<div class="image-upload">
+					<!-- <button type="button" class="btn btn-primary" ng-click="showMediaOptions('deck')">Upload</button> -->
+					<span class="btn btn-success fileinput-button">
+				        <i class="glyphicon glyphicon-plus"></i>
+				        <span>Select image</span>
+				        <input id="file" type="file" name="file" accept="image/*" custom-on-change="add">
+				    </span>
+				</div>
+			</div>
+			<div>
+				<img ng-show="createDeckMode" ng-src="{{ deck.image }}" id="image-preview" style="height:200px; margin: 20px 0;"/>
+				<img ng-hide="createDeckMode" ng-src="{{ deck.content.image }}" id="image-preview" style="height:200px; margin: 20px 0;"/>
+			</div>
+			<div class="editDeckButtons" ng-hide="createDeckMode">
+				<button type="button" class="btn btn-danger btn-full-stretch delete-deck-trans" ng-click="showDeleteDeck()">Delete Deck</button>
+			</div>
+		</form>
+		<form class="create-form create-cards-in-deck-form" ng-show="createDeckMode && currentUser.username == 'verze'">
+				<h3>Cards</h3>
+				<button class="btn btn-primary btn-import-cards" type="button" ng-click="showImportCards()"><i class="ion-compose"></i> Import</button>
+				<ul class="cards-create-container">
+					<card-in-deck></card-in-deck>
+				</ul>
+		</form>

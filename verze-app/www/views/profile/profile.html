@@ -1,0 +1,79 @@
+<ion-view view-title="Me">
+	<ion-nav-bar class="bar-balanced">
+		<ion-nav-back-button class="button-clear" side="primary">
+			<i class="ion-arrow-left-b"></i> Back
+		</ion-nav-back-button>
+	</ion-nav-bar>
+	<ion-nav-buttons side="primary">
+		<!-- <button type="button" ui-sref="tabs.notifications" ng-show="currentUser.username == user.username" class="btn"><i class="ion-ios-bell" style="font-size: 2em;"></i></button>
+		<button type="button" ui-sref="tabs.progress" ng-show="currentUser.username == user.username" class="btn"><i class="ion-stats-bars" style="font-size: 2em;"></i></button> -->
+		<button type="button" ng-click="openUserOptionsPopover($event)" ng-hide="currentUser.username == user.username" class="btn"><i class="ion-more" style="font-size: 2em;"></i></button>
+	</ion-nav-buttons>
+	<ion-nav-buttons side="secondary">
+		<button type="button" ui-sref="tabs.settings" ng-show="currentUser.username == user.username" class="btn"><i class="ion-ios-gear" style="font-size: 2em;"></i></button>
+	</ion-nav-buttons>
+	<ion-content>
+		<ion-refresher pulling-text="Pull to refresh..." on-refresh="refreshMe()"></ion-refresher>
+		<div class="panel panel-default profile-panel">
+  			<div class="panel-body profile-panel-body">
+    			<div class="profile-avatar">
+    				<div class="avatar" ng-click="openAvatarPopover($event)" ng-disabled="currentUser.username != user.username">
+						<img ng-src='{{ user.avatar }}'>
+						<!-- <i class="ion-arrow-down-b" ng-show="currentUser.username == user.username" ng-click="openAvatarPopover($event)" style="font-size: 1.5em;"></i> -->
+					</div>
+				</div>
+    			<div class="profile-information">
+    				<ul>
+    					<li class="profile-username">
+    						@{{ user.username }}
+							<span class="profile-exp">{{ user.exp }}</span>
+							<span class="profile-badges">
+								<div class="badges-count">{{ user.badges.length }}</div>
+								<i class="ion-ribbon-b" ui-sref="tabs.badges({ username: user.username })" ></i>
+							</span>
+    					</li>
+    					<li class="profile-name"><strong>{{ user.firstname }} {{ user.lastname }}</strong></li>
+    					<li class="profile-location"><i class="ion-location"></i> {{ user.country }} </li>
+    					<li class="profile-website" ng-show="user.website"><i class="ion-link"></i><a ng-href="{{ user.website }}"> {{ user.website }}</a></li>
+    					<li class="profile-caption" ng-show="user.caption.length !=0"><i class="ion-quote"></i>{{ user.caption }}</li>
+		    			<li class="profile-level">
+							<i class="ion-earth"></i>
+							<span ng-show="user.languages.length == 0">None</span>
+							<ul class="languages-list">
+								<ion-scroll direction="x">
+									<li ng-repeat="language in user.languages" ng-click="openLangPopover($event, language)">
+										<img class="lang-thumbnail" ng-src='{{ findLanguage(language.name).image }}'>
+									</li>
+								</ion-scroll>
+							</ul>
+						</li>
+    				</ul>
+    				<i class="ion-edit profile-edit" ng-show="currentUser.username == user.username" ng-click="openProfileModal()"></i>
+    			</div>
+  			</div>
+  			<div class="panel-footer profile-panel-footer">
+  				<div class="col-xs-4" style="padding-left: 15px;"><a ui-sref="tabs.followers({ username: user.username })">{{ currentUser.followers.length }} Followers</a></div>
+    			<div class="col-xs-4"><a ui-sref="tabs.following({ username: user.username })">{{ currentUser.following.length }} Following</a></div>
+    			<div class="profile-follow-button">
+    				<div ng-show="sameUser"><button type="button" class="btn" ng-disabled="true"><i class="ion-checkmark-round"></i> Followed</button></div>
+	    			<div ng-show="!sameUser && !isFollowing"><button type="button" class="btn" ng-click="followUser(user)"><i class="ion-person-add"></i> Follow</button></div>
+	    			<div ng-show="!sameUser && isFollowing"><button type="button" class="btn" ng-click="unfollowUser(user)"><i class="ion-checkmark-round"></i> Followed</button></div>
+				</div>
+    			<!-- <div class="col-xs-2">Views</div>
+    			<div class="col-xs-2">Loves</div> -->
+  			</div>
+		</div>
+		<div class="panel profile-panel-tabs">
+			<ul class="profile-navbar nav nav-tabs">
+	  			<!-- <li class="active profile-tab feed-tab" ng-click="switchProfTab('Feed')">Feed</li> -->
+	  			<li class="active profile-tab cards-tab" ng-click="switchProfTab('Cards')">Cards</li>
+	  			<li class="profile-tab decks-tab" ng-click="switchProfTab('Decks')">Decks</li>
+	  			<li class="profile-tab courses-tab" ng-click="switchProfTab('Courses')">Courses</li>
+	  			<li class="profile-tab loved-tab" ng-click="switchProfTab('Loved')">Loved</li>
+			</ul>
+			<div class="panel-content">
+				<ng-include src="template"></ng-include>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,77 @@
+		<form class="create-form">
+			<!-- <div class="edit-toolbar"> -->
+				<h3 ng-hide="editCourseMode" class="create-course-trans">Create Course</h3>
+				<h3 ng-show="editCourseMode" class="edit-course-trans">Edit Course</h3>
+				<button type="submit" ng-click="addCourse()" class="btn btn-primary submit-create-btn"><i class="ion-paper-airplane"></i></button>
+			<!-- </div> -->
+			<div class="form-group">
+				<label for="name" class="name-of-course-trans">Name of Course</label>
+				<input ng-hide="editCourseMode" type="text" class="form-control" id="name" placeholder="Name" ng-model="course.name"></input>
+				<input ng-show="editCourseMode" type="text" class="form-control" id="name" placeholder="Name" ng-model="course.content.name"></input>
+			</div>
+			<div class="form-group">
+				<label for="caption" class="caption-trans">Caption</label>
+				<input ng-hide="editCourseMode" type="text" class="form-control" id="caption" placeholder="Caption (100 char max)" ng-model="course.caption"></input>
+				<input ng-show="editCourseMode" type="text" class="form-control" id="caption" placeholder="Caption (100 char max)" ng-model="course.content.caption"></input>
+			</div>
+			<div class="form-group">
+					<label for="lang1" class="language-1-trans">Language 1</label>
+					<select ng-hide="editCourseMode" name="Language1" class="form-control" id="lang1" ng-model="course.lang1">
+						<option ng-repeat="lang in languages" value="{{lang.name}}">{{updateLang(lang.name)}}</option>
+					</select>
+					<select ng-show="editCourseMode" name="Language1" class="form-control" id="lang1" ng-model="course.content.lang1">
+						<option ng-repeat="lang in languages" value="{{lang.name}}">{{updateLang(lang.name)}}</option>
+					</select>
+			</div>
+			<div class="form-group">
+				<label for="lang2" class="language-2-trans">Language 2</label>
+					<select ng-hide="editCourseMode" name="Language2" class="form-control" id="lang2" ng-model="course.lang2">
+						<option ng-repeat="lang in languages" value="{{lang.name}}">{{updateLang(lang.name)}}</option>
+					</select>
+					<select ng-show="editCourseMode" name="Language2" class="form-control" id="lang2" ng-model="course.content.lang2">
+						<option ng-repeat="lang in languages" value="{{lang.name}}">{{updateLang(lang.name)}}</option>
+					</select>
+			</div>
+			<div class="form-group">
+				<label for="difficulty" class="difficulty-trans">Difficulty</label>
+				<select ng-hide="editCourseMode" name="Difficulty" class="form-control" id="difficulty" ng-model="course.difficulty">
+					<option ng-repeat="level in levels" value="{{ level.name }}">updateLang({{ level.name }})</option>
+				</select>
+				<select ng-show="editCourseMode" name="Difficulty" class="form-control" id="difficulty" ng-model="course.content.difficulty">
+					<option ng-repeat="level in levels" value="{{ level.name }}">updateLang({{ level.name }})</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<!-- <label for="categories">Categories</label>
+				<select name="Categories" class="form-control" id="categories" ng-model="deck.categories">
+					<option ng-repeat="category in categories" value="{{ category.name }}">{{ category.name }}</option>
+				</select> -->
+				<label for="categories" class="categories-trans">Categories</label>
+				<!-- <label class="item item-input item-select my-select">
+					div class="input-label">Categories</div> -->
+					<select ng-hide="editCourseMode" ng-model="course.categories" multiple id="categories">
+						<option ng-repeat="category in categories" value="{{ category.name }}">{{updateLang(category.name)}}</option>
+					</select>
+					<select ng-show="editCourseMode" ng-model="course.content.categories" multiple id="categories">
+						<option ng-repeat="category in categories" value="{{ category.name }}">{{updateLang(category.name)}}</option>
+					</select>
+			</div>
+			<div class="form-group">
+				<label for="background" class="image-trans">Image</label>
+				<div class="image-upload">
+					<!-- <button type="button" class="btn btn-primary" ng-click="showMediaOptions('course')">Upload</button> -->
+					<span class="btn btn-success fileinput-button">
+				        <i class="glyphicon glyphicon-plus"></i>
+				        <span>Select image</span>
+				         <input id="file" type="file" name="file" accept="image/*" custom-on-change="add">
+				    </span>
+				</div>
+			</div>
+			<div>
+				<img ng-hide="editCourseMode" ng-src="{{ course.image }}" id="image-preview" style="height:200px; margin: 20px 0;"/>
+				<img ng-show="editCourseMode" ng-src="{{ course.content.image }}" id="image-preview" style="height:200px; margin: 20px 0;"/>
+			</div>
+			<div class="editCourseButtons" ng-show="editCourseMode">
+				<button type="button" class="btn btn-danger btn-full-stretch delete-course-trans" ng-click="showDeleteCourse()">Delete Course</button>
+			</div>
+		</form>

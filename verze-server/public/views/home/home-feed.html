@@ -1,0 +1,32 @@
+<div class="home-page home-feed">
+	<div class="title feed-trans">Feed</div>
+	<div class="subtitle feed-caption-trans">From people you follow</div>
+	<div class="list home-list" ng-hide="emptyFeed || emptyFollowing">
+		<div class="list-header courses-trans">Courses</div>
+			<ul class="recent-decks-courses">
+				<li ng-repeat="course in followedCourses track by $index">
+					<course></course>
+				</li>
+			</ul>
+		<div class="list-header decks-trans">Decks</div>
+			<ul class="recent-decks-courses">
+		   		<li ng-repeat="deck in followedDecks track by $index">
+					<deck></deck>
+				</li>
+			</ul>
+		<div class="list-header cards-trans">Cards</div>
+			<ul class="recent-decks-courses">
+		   		<li ng-repeat="card in followedCards track by $index">
+					<thumbnail-card></thumbnail-card>
+				</li>
+			</ul>
+	</div>
+	<div class="list home-list" ng-show="emptyFeed || emptyFollowing">
+		<div class="list-header follow-users-trans">Follow users</div>
+			<ul class="recent-decks-courses">
+				<li ng-repeat="user in users | limitTo: 30 track by $index">
+					<user></user>
+				</li>
+			</ul>
+	</div>
+</div>

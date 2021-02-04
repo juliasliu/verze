@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ng Virtual Keyboard Demo</title>
+
+	<!-- jQuery + jQuery-UI -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+	<!-- keyboard -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/virtual-keyboard/1.26.0/css/keyboard.min.css" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/virtual-keyboard/1.26.0/js/jquery.keyboard.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/virtual-keyboard/1.26.0/layouts/keyboard-layouts-combined.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/virtual-keyboard/1.26.0/layouts/keyboard-layouts-greywyvern.min.js"></script>
+
+	<!-- keyboard extensions (optional) -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/virtual-keyboard/1.26.0/js/jquery.mousewheel.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/virtual-keyboard/1.26.0/js/jquery.keyboard.extension-typing.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/virtual-keyboard/1.26.0/js/jquery.keyboard.extension-scramble.min.js"></script>
+
+	<!-- Materialize -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+
+	<!-- AngularJs -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
+	<script src="../dist/ng-virtual-keyboard.js"></script>
+
+	<script>
+		angular.module('exampleApp', ['ng-virtual-keyboard'])
+
+		.config(['VKI_CONFIG', function(VKI_CONFIG){
+			VKI_CONFIG.position = {
+				of: 'body',
+				my: 'center top',
+				at: 'center bottom',
+				at2: 'center bottom'
+			};
+			VKI_CONFIG.tabNavigation = true;
+			VKI_CONFIG.css = {
+				container: 'blue-grey darken-1',
+				buttonDefault: 'btn waves-effect waves-light',
+				buttonHover: 'orange',
+				buttonAction: 'orange',
+				buttonActive: 'orange',
+				buttonDisabled: 'disabled'
+			};
+			VKI_CONFIG.extensions = {
+				addTyping: false
+			};
+		}])
+
+		.controller('ExampleCtrl', ['$scope', 'ngVirtualKeyboardService', function($scope, ngVirtualKeyboardService){
+			$scope.t01Config = {
+				layout: 'alpha',
+				extensions: {
+					addTyping: false
+				}
+			};
+
+			$scope.t04Config = {
+				layout: 'international',
+				autoAccept: true,
+				extensions: {
+					addScramble: {randomizeOnce: false},
+					addTyping: false
+				}
+			};
+
+			$scope.onKeyboardClick = function(id){
+				var keyboard = ngVirtualKeyboardService.getKeyboardById(id);
+				if (keyboard) {
+					if (keyboard.isOpen) {
+						keyboard.close();
+					} else {
+						keyboard.reveal();
+					}
+				}
+			};
+
+			$scope.t05Config = {
+				layout: 'alpha',
+				extensions: {
+					addTyping: false
+				},
+				events: {
+					keyboardChange: function(e, kb, el) {
+						console.log(e.type + ', "' + el.value + '", "' + kb.$preview.val() + '"');
+					},
+					change: function(e, kb, el) {
+						console.log(e.type + ', "' + el.value + '", "' + kb.$preview.val() + '"');
+					}
+				}
+			};
+
+			$scope.t06Config = {
+				layout: 'alpha',
+				extensions: {
+					addTyping: false
+				},
+				autoAccept: true,
+				usePreview: false,
+				autoUpdateModel: true
+			};
+
+			$scope.t06Change = function() {
+				console.log('t06 value changed');
+			};
+		}]);
+	</script>
+
+	<link href="demo.css" rel="stylesheet">
+</head>
+
+<body ng-app="exampleApp">
+	<div ng-controller="ExampleCtrl">
+		<div id="content" class="container">
+			<h1>Ng Virtual Keyboard</h1>
+
+			<div class="row">
+				<form class="col s12">
+
+					<div class="row">
+						<div class="col s12 m6 l4">
+							<div class="input-field">
+								<label for="t01">ALPHA Text</label>
+								<input type="text" name="t01" ng-model="t01"
+									class="validate"
+									ng-virtual-keyboard="t01Config"
+									placeholder=" Enter something..."
+									required>
+								</input>
+								<small>
+									Model value: {{t01}}<br>
+									* Placeholder (watermark).
+								</small>
+							</div>
+						</div>
+
+						<div class="col s12 m6 l4">
+							<div class="input-field">
+								<label for="t02">QWERTY Email</label>
+								<input type="email" name="t02" ng-model="t02"
+									class="validate"
+									ng-virtual-keyboard>
+								</input>
+								<small>
+									Model value: {{t02}}<br>
+									* Valid Email.
+								</small>
+							</div>
+						</div>
+
+						<div class="col s12 m6 l4">
+							<div class="row">
+								<div class="col s10">
+									<div class="input-field">
+										<label for="t03">Password</label>
+										<input id="t03" type="password" name="t03" ng-model="t03"
+											class="validate"
+											placeholder="Insert your password"
+											ng-virtual-keyboard="{layout: 'num', restrictInput: true, preventPaste: true}">
+										</input>
+										<small>
+											Model value: {{t03}}<br>
+											* Click button to open keyboard.<br>
+											* Input restricted.<br>
+											* Pasting (ctrl-v) not allowed.
+										</small>
+									</div>
+								</div>
+								<div class="col s2">
+									<a class="btn-floating waves-effect waves-light"
+										title="Click to open the virtual keyboard"
+										ng-click="onKeyboardClick('t03')">
+										<i class="material-icons">dialpad</i>
+									</a>
+								</div>
+							</div>
+							<div class="row">
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col s12 m6 l4">
+							<div class="input-field">
+								<label for="t04">Textarea</label>
+								<textarea name="t04" ng-model="t04"
+									class="materialize-textarea"
+									ng-virtual-keyboard="t04Config">
+								</textarea>
+								<small>
+									Model value: {{t04}}<br>
+									* Auto accept content.<br>
+									* Extension Scramble.
+								</small>
+							</div>
+						</div>
+
+						<div class="col s12 m6 l4">
+							<div class="input-field">
+								<label for="t05">Event Handler</label>
+								<input type="text" name="t05" ng-model="t05"
+									class="validate"
+									ng-virtual-keyboard="t05Config">
+								</input>
+								<small>
+									Model value: {{t05}}<br>
+									* Event keyboardChange and change.
+								</small>
+							</div>
+						</div>
+
+						<div class="col s12 m6 l4">
+							<div class="input-field">
+								<label for="t06">Auto Update Model</label>
+								<input type="text" name="t06" ng-model="t06"
+									class="validate"
+									ng-change="t06Change()"
+									ng-virtual-keyboard="t06Config">
+								</input>
+								<small>
+									Model value: {{t06}}<br>
+									* No preview.<br>
+									* Auto update model.<br>
+									* ngChange fired.
+								</small>
+							</div>
+						</div>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+<div class="empty-tab" ng-show="courses.length == 0">
+	<i class="ion-sad-outline" style="font-size: 5em;"></i>
+	<h3>There are no results.</h3>
+	<p>Sorry about that.</p>
+</div>
+<ul class="list" style="margin-right: 20px;">
+        <li ng-repeat="course in (courses | sortBy:this)">
+        	<course></course>
+       	</li>
+</ul>

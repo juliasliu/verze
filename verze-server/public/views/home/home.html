@@ -1,0 +1,28 @@
+<div class="content-container">
+		<div class="home-sidebar">
+			<div class="header home-trans">Home</div>
+			<ul>
+				<li><a><button type="button" class="btn" ng-click="switchHomeView('Dashboard')"><i class="ion-home"></i><span class="dashboard-trans">Dashboard</span></button></a></li>
+				<li><a><button type="button" class="btn" ng-click="switchHomeView('Feed')"><i class="ion-network"></i><span class="following-trans">Following</span></button></a></li>
+				<li><a><button type="button" class="btn" ng-click="switchHomeView('Magic')"><i class="ion-wand"></i><span class="magic-trans">Magic</span></button></a></li>
+			</ul>
+			<div class="header explore-trans">Explore</div>
+			<ul>
+				<li><a><button type="button" class="btn" ng-click="switchHomeView('Classics')"><i class="ion-checkmark-circled"></i><span class="classics-trans">Classics</span></button></a></li>
+				<!-- <li><a ui-sref="home"><button type="button" class="btn"><i class="ion-calendar"></i>Pages</button></a></li>
+				<li><a ui-sref="home"><button type="button" class="btn"><i class="ion-calendar"></i>Events</button></a></li>
+				<li><a ui-sref="home"><button type="button" class="btn"><i class="ion-earth"></i>Travel</button></a></li> -->
+			</ul>
+			<!-- <div class="header">Me</div>
+			<ul>
+				<li><a ui-sref="me"><button type="button" class="btn"><i class="ion-folder"></i>Cards</button></a></li>
+				<li><a ui-sref="me"><button type="button" class="btn"><i class="ion-folder"></i>Decks</button></a></li>
+				<li><a ui-sref="me"><button type="button" class="btn"><i class="ion-folder"></i>Courses</button></a></li>
+				<li><a ui-sref="me"><button type="button" class="btn"><i class="ion-images"></i>Media</button></a></li>
+			</ul>
+			<div class="footer">
+			© Verze 2018. Made by Julia Liu. Thank you for your support.
+			</div> -->
+		</div>
+		<ng-include src="template"></ng-include>
+</div>

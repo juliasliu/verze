@@ -1,0 +1,95 @@
+
+	<div class="deck-view">
+		<div class="deck-view-header" style='background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url({{ deck.content.image }})'>
+			<div class="wrapper">
+				<div class="deck-description-container">
+					<div class="deck-language">
+						<img class="lang-thumbnail" ng-src='{{ findLanguage(deck.content.lang1).image }}'>
+						<span class="lang-name">{{ updateLang(deck.content.lang1) }}</span>
+					</div>
+					<div class="deck-language">
+						<img class="lang-thumbnail" ng-src='{{ findLanguage(deck.content.lang2).image }}'>
+						<span class="lang-name">{{ updateLang(deck.content.lang2) }}</span>
+					</div>
+					<div class='deck-numcards'>{{ deck.content.cards.length }} <span class="cards-trans">cards</span></div>
+					<div class="deck-name">{{ deck.content.name }}</div>
+					<div class="deck-course-name">{{ deck.content.course.name }}</div>
+					<div class="deck-author">
+						<button class='btn mini-avatar' ui-sref='tabs.me({ username: deck.content.author.username })'>
+							<img ng-src='{{ deck.content.author.avatar }}'>
+							<p>@{{ deck.content.author.username }}</p>
+						</button>
+					</div>
+					<div class="deck-navbar">
+						<ul class="pagination deck-navbar-left">
+							<li class="deck-navbar-review">
+								<button type="button" class="btn deck-review-button" ng-click="showDeckCourseModes('deck')" ng-disabled="emptyCardsInDeck"><i class="ion-play"></i><div>Start</div></button>
+								<div class='wrap deck-review-buttons'>
+							  		<div class='content'>
+										<button type="button" class="btn animated bounceIn" id="learn-btn" ng-click="deckCourseModeClicked('learn', 'deck')" ng-disabled="finishedLearn"  ng-mouseover="viewDisabled('learn')" ng-mouseleave="closeDisabled()"><i class="ion-lightbulb"></i><div>Learn</div></button>
+										<button type="button" class="btn animated bounceIn" id="review-btn" ng-click="deckCourseModeClicked('review', 'deck')" ng-disabled="!startedLearn" ng-mouseover="viewDisabled('review')" ng-mouseleave="closeDisabled()"><i class="ion-loop"></i><div>Review</div></button>
+										<button type="button" class="btn animated bounceIn" id="test-btn" ng-click="deckCourseModeClicked('test', 'deck')" ng-disabled="!finishedLearn" ng-mouseover="viewDisabled('test')" ng-mouseleave="closeDisabled()"><i class="ion-document-text"></i><div>Test</div></button>
+							  		</div>
+							  	</div>
+							</li>
+						</ul>
+						<ul class="pagination deck-navbar-right">
+							<li class="deck-navbar-save">
+								<button class='btn' ng-click='openSaveDeckPopover($event)' ng-disabled='currentUser.username == deck.content.author.username' data-toggle="tooltip" title="Save Deck">
+									<i class='ion-plus-round'></i>
+									<p class='deck-social-count'>{{ deck.content.saved.length }}</p>
+								</button>
+							</li>
+							<li>
+								<button type="button" ng-click="showUnavailablePopover($event)" class="btn" data-toggle="tooltip" title="Share">
+									<i class="ion-share"></i>
+								</button>
+							</li>
+							<li>
+								<button class='btn' ng-click='onEditDeckClick(deck.content._id)' ng-disabled='currentUser.username != deck.content.author.username' data-toggle="tooltip" title="Edit">
+									<i class='ion-edit'></i>
+								</button>
+							</li>
+							<li>
+								<button type="button" ng-click="openDeckOptionsPopover($event)" class="btn" style="font-size: 1.5em;" data-toggle="tooltip" title="More">
+									<i class="ion-more"></i>
+								</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="deck-image-container">
+					<img class="deck-image" ng-src="{{ deck.content.image }}">
+				</div>
+			</div>
+			<div class="progress-navbar">
+				<div id="progress-bar">
+		 			<div id="progress">
+					<div id="deck-course-progress-bar">
+					    <div id="label">{{ deckCourseProgress }}%</div>
+					  	</div>
+					</div>
+		  		</div>
+			</div>
+		</div>
+		<div class="empty-tab" ng-show="emptyCardsInDeck && !editMode">
+			<i class="ion-sad-outline" style="font-size: 5em;"></i>
+			<h3>No Cards In This Deck.</h3>
+			<p>Get started by creating your own cards in the deck.</p>
+		</div>
+		<div class="deck-view-body">
+			<ul class="card-list active">
+				<li ng-repeat="card in deck.content.cards">
+					<preview-card></preview-card>
+				</li>
+			</ul>
+			<ul class="phrase-list">
+				<li class="phrase" ng-repeat="card in deck.content.cards">
+					<div class="front-phrase">{{ card.frontphrase }}</div>
+					<div class="front-pronun">{{ card.frontpronun }}</div>
+					<div class="back-pronun">{{ card.backpronun }}</div>
+					<div class="back-phrase">{{ card.backphrase }}</div>
+				</li>
+			</ul>
+		</div>
+	</div>

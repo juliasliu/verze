@@ -1,0 +1,12 @@
+<ion-modal-view>
+	<ion-header-bar>
+		<h1 class="title">Comments</h1>
+		<div class="secondary-header">
+			<button class="btn" ng-click="closeCardComments()"><i class="ion-close" style="font-size: 2em;"></i></button>
+		</div>
+	</ion-header-bar>
+	<ion-content>
+		<ion-refresher pulling-text="Pull to refresh..." on-refresh="refreshComments()"></ion-refresher>
+		<comments></comments>
+	</ion-content>
+</ion-modal-view>

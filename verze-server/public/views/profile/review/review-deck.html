@@ -1,0 +1,51 @@
+  	<div class="deck-view">
+	  	<div class="deck-view-bar">
+	  		<button class="btn btn-go-back-to-deck" type="button" ng-click="goBackToDeckCourse(true)" style="font-size: 1.25em;"><i class="ion-arrow-left-b"></i> Back</button>
+			<div class="secondary-header">
+				<button class="btn" type="button" ng-click="openReviewHelpPopover($event)" data-toggle="tooltip" title="Help"><i class="ion-help-circled"></i></button>
+				<button class="btn" type="button" ng-click="openSettingsPopover($event, 'learn')" ng-show="learnMode[0]" data-toggle="tooltip" title="Settings"><i class="ion-gear-a"></i></button>
+				<button class="btn" type="button" ng-click="openSettingsPopover($event, 'review')" ng-show="learnMode[1] || reviewMode[0]" data-toggle="tooltip" title="Settings"><i class="ion-gear-a"></i></button>
+				<button class="btn" type="button" ng-click="openSettingsPopover($event, 'test')" ng-show="testMode[0]" data-toggle="tooltip" title="Settings"><i class="ion-gear-a"></i></button>
+			</div>
+	  	</div>
+	  	<div class="deck-learn" ng-show="learnMode[0]">
+		  	<div class="metacard" ng-show="hasMetacards">
+		  		<div class="metacard-body"></div>
+		  	</div>
+			<div class="cards-container" ng-hide="hasMetacards">
+			<!-- <swipe-cards>
+		  		<swipe-card ng-repeat="card in thisDeck" on-destroy="cardDestroyed($index)" on-card-swipe="cardSwiped($index)"> -->
+		    		<card toggle-show-card-parts="toggleShowCardParts">
+						<front-body>
+							<social-buttons></social-buttons>
+						</front-body>
+						<back-body>
+							<social-buttons></social-buttons>
+						</back-body>
+					</card>
+		  		<!-- </swipe-card>
+			</swipe-cards> -->
+			</div>
+			<!-- <button class="btn btn-primary btn-back" ng-click="backCard()" ng-show="hasMetacards"><i class="ion-arrow-left-c"></i></button> -->
+		  	<button class="btn btn-primary btn-next" ng-click="nextCard()"><i class="ion-arrow-right-c"></i></button>
+		</div>
+	  	<magic></magic>
+	  	<div class="deck-review" ng-show="learnMode[1] || reviewMode[0]">
+	  		<ng-include src="miniTemplate" class="mini-container"></ng-include>
+	  	</div>
+	  	<div class="deck-test" ng-show="testMode[0]">
+	  		<ng-include src="miniTemplate" class="test-container"></ng-include>
+	  	</div>
+	  	<ng-include src="'views/profile/review/show-correct-message.html'"></ng-include>
+	  	<ng-include src="'views/profile/review/show-complete-message.html'"></ng-include>
+	  	<div id="progress-bar">
+	  		<div id="progress">
+				<div id="review-bar" ng-show="learnMode[0]">
+			    	<div id="label">{{ reviewProgress }}%</div>
+			  	</div>
+			  	<div id="mini-bar" ng-show="learnMode[1] || reviewMode[0] || testMode[0]">
+			    	<div id="label">{{ miniProgress }}%</div>
+			  	</div>
+			</div>
+	  	</div>
+	</div>

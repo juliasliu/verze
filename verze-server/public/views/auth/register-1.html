@@ -1,0 +1,24 @@
+
+	<div class="register-login-page">
+		<div class="login-form">
+			<div class="title register-trans">Register
+			</div>
+			<div class="form-group register-form-group">
+				<label for="username" class="labels">Username</label> <input
+					type="text" class="form-control register-input" id="username"
+					placeholder="username" ng-model="user.username" autocapitalize="off"></input>
+			</div>
+			<div class="form-group register-form-group">
+				<label for="password" class="labels">Password</label> <input
+					type="password" class="form-control register-input" id="password"
+					placeholder="••••••••••" ng-model="user.password"></input>
+			</div>
+			<div class="form-group register-form-group">
+				<label for="email" class="labels">Email</label> <input
+					type="email" class="form-control register-input" id="email"
+					placeholder="Email" ng-model="user.email"></input>
+			</div>
+			<button type="button" class="btn btn-primary btn-full-stretch" ng-click="switchRegisterTab('2')">Continue</button>
+			<!-- <div class="register-login-bottom">Have an account? <a ui-sref="login">Login</a></div> -->
+		</div>
+	</div>

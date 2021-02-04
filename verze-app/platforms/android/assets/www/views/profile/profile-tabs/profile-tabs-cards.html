@@ -1,0 +1,14 @@
+<div class="profile-tabs-container cards-tab">
+	<div class="empty-tab" ng-show="emptyCards">
+		<i class="ion-sad-outline" style="font-size: 5em;"></i>
+		<h3>You Don't Have Any Cards.</h3>
+		<p>Get started by creating your own cards or saving other cards in the uniVerze.</p>
+	</div>
+	<div ng-hide="emptyCards">
+		<ul><!-- ui-sref="tabs.viewCard({ id: card._id })" -->
+			<li ng-repeat="card in cards | orderBy: '-updated_at' : true">
+				<thumbnail-card></thumbnail-card>
+			</li>
+		</ul>
+	</div>
+</div>

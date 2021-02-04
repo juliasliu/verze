@@ -1,0 +1,106 @@
+<div class="wrapper">
+		<div class="panel panel-default profile-panel">
+  			<div class="panel-body profile-panel-body">
+    			<div class="profile-avatar">
+    				<div class="avatar" ng-click="openAvatarPopover($event)" ng-disabled="currentUser.username != user.username">
+						<img ng-src='{{ user.avatar }}'>
+						<!-- <i class="ion-arrow-down-b" ng-show="currentUser.username == user.username" ng-click="openAvatarPopover($event)" style="font-size: 1.5em;"></i> -->
+					</div>
+				</div>
+    			<div class="profile-information">
+    				<ul>
+    					<li class="profile-username">
+    						@{{ user.username }}
+    					</li>
+    					<li class="profile-name">
+    						<div class="name-trans">Name</div>
+    						<p>{{ user.firstname }} {{ user.lastname }}</p>
+    					</li>
+    					<li class="profile-exp">
+							<div class="experience-trans">Experience</div>
+							<p class="profile-points"><i class="ion-connection-bars"></i>{{ user.exp }} <span class="points-trans">points</span></p>
+							<p class="profile-badges" ui-sref="badges({ username: user.username })"><i class="ion-ribbon-b"></i>{{ user.badges.length }} <span class="badges-trans">badges</span></p>
+							<div class="progress-navbar exp">
+								<span>LV {{ user.level }}</span>
+								<div id="progress-bar">
+						 			<div id="progress">
+									<div id="exp-progress-bar">
+									</div>
+						  		</div>
+							</div>
+						</li>
+		    			<li class="profile-level">
+		    				<div class="languages-trans">Languages</div>
+							<i class="ion-earth"></i>
+							<span ng-show="user.languages.length == 0">None</span>
+							<ul class="languages-list">
+								<li ng-repeat="language in user.languages" ng-click="openLangPopover($event, language)">
+									<img class="lang-thumbnail" ng-src='{{ findLanguage(language.name).image }}'>
+									<span class='lang-name'>{{ updateLang(language.name) }}</span>
+									<span class='lang-difficulty'>{{ updateLang(language.level) }}</span>
+								</li>
+							</ul>
+						</li>
+    					<li class="profile-location">
+    						<div class="location-trans">Location</div>
+    						<i class="ion-location"></i> <p>{{ user.country }}</p>
+    					</li>
+    					<li class="profile-website" ng-show="user.website">
+    						<div class="website-trans">Website</div>
+    						<i class="ion-link"></i><a href="{{ user.website }}"> {{ user.website }}</a>
+    					</li>
+    					<li class="profile-caption" ng-show="user.caption.length !=0">
+    						<div class="caption-trans">Caption</div>
+    						<i class="ion-quote"></i><p>{{ user.caption }}</p>
+    					</li>
+    					<li class="profile-member-since">
+    						<div><span class="member-since-trans">Member since</span> {{ user.createdAt }}</div>
+    					</li>
+    				</ul>
+    				<i class="ion-edit profile-edit" ng-show="currentUser.username == user.username" ng-click="openProfileModal()"></i>
+    			</div>
+  			</div>
+  			<div class="panel-footer profile-panel-footer">
+  				<div class="col"><a ui-sref="followers({ username: user.username })"><strong>{{ user.followers.length }}</strong> <span class="followers-trans">Followers</span></a></div>
+    			<div class="col"><a ui-sref="following({ username: user.username })"><strong>{{ user.following.length }}</strong> <span class="following-trans">Following</span></a></div>
+    			<div class="profile-follow-button">
+    				<div ng-show="sameUser"><button type="button" class="btn" ng-disabled="true"><i class="ion-checkmark-round"></i> <span class="myself-trans">Myself</span></button></div>
+	    			<div ng-show="!sameUser && !isFollowing"><button type="button" class="btn" ng-click="followUser(user)"><i class="ion-person-add"></i> <span class="follow-trans">Follow</span></button></div>
+	    			<div ng-show="!sameUser && isFollowing && !showUnfollow"><button type="button" class="btn" ng-mouseover="hoverFollow()"><i class="ion-checkmark-round"></i> <span class="followed-trans">Followed</span></button></div>
+	    			<div ng-show="!sameUser && isFollowing && showUnfollow"><button type="button" class="btn" ng-click="unfollowUser(user)" ng-mouseout="unhoverFollow()"><i class="ion-close"></i> <span class="unfollow-trans">Unfollow</span></button></div>
+				</div>
+    			<!-- <div class="col-xs-2">Views</div>
+    			<div class="col-xs-2">Loves</div> -->
+  			</div>
+		</div>
+		<div class="panel profile-panel-tabs">
+			<ul class="profile-navbar nav nav-tabs">
+	  			<!-- <li class="active profile-tab feed-tab" ng-click="switchProfTab('Feed')">Feed</li> -->
+	  			<li class="active profile-tab cards-tab" ng-click="switchProfTab('Cards')"><strong class="cards-trans">Cards</strong> <span>({{ cards.length }})</span></li>
+	  			<li class="profile-tab decks-tab" ng-click="switchProfTab('Decks')"><strong class="decks-trans">Decks</strong> <span>({{ decks.length }})</span></li>
+	  			<li class="profile-tab courses-tab" ng-click="switchProfTab('Courses')"><strong class="courses-trans">Courses</strong> <span>({{ courses.length }})</span></li>
+	  			<li class="profile-tab loved-tab" ng-click="switchProfTab('Loved')"><strong class="loved-trans">Loved</strong> <span>({{ loved.length }})</span></li>
+				<!-- <li><button type="button" ng-click="openViewTabOptionsPopover($event)" class="btn"><i class="ion-gear-a"></i></button></li> -->
+			</ul>
+			<div class="panel-content">
+				<ng-include src="template"></ng-include>
+			</div>
+		</div>
+		<div class="profile-panel-side">
+			<div class="panel profile-panel-follow">
+				<h5 class="follow-users-trans">Follow users</h5>
+				<ul>
+					<li ng-repeat="user in recUsers | limitTo: 5"><thumbnail-user></thumbnail-user></li>
+				</ul>
+			</div>
+			<div class="panel profile-panel-magic">
+				<h5 class="recommended-topics-trans">Recommended topics</h5>
+				<ul class="hot-topics">
+						<li><span>#hottopics</span></li>
+						<li><span>#comingsoon</span></li>
+						<li><span>#addtagstocards</span></li>
+						<li><span>#trendtopics</span></li>
+				</ul>
+			</div>
+		</div>
+</div>

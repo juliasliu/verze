@@ -1,0 +1,47 @@
+<ion-view view-title="" class="get-started-view">
+	<ion-nav-bar class="bar-transparent">
+		<ion-nav-back-button class="button-clear" side="primary">
+			<i class="ion-arrow-left-b"></i> Back
+		</ion-nav-back-button>
+	</ion-nav-bar>
+	<ion-content class="register-login-page" scroll="false">
+		<div class="start-tutorial">
+			<div class="slide-wrapper">
+			    <div class="slide active" id="slide-1">
+				    <div class="title">Pick a language you want to learn</div>
+				    <div class="list">
+						<!-- <div class="item item-avatar" ng-click="getSlideActive('language', 'English')">
+						  	<img ng-src="{{ findLanguage('English').image }}">
+						  	<label for="eng">English (USA)</label>
+						  	<p class="item-right"><i class="ion-chevron-right"></i></p>
+						</div> -->
+						<div class="item item-avatar" ng-click="getSlideActive('language', 'Chinese')">
+						  	<img ng-src="{{ findLanguage('Chinese').image }}">
+						  	<label for="eng">Chinese (Simplified)</label>
+						  	<p class="item-right"><i class="ion-chevron-right"></i></p>
+						</div>
+						<div class="item item-avatar" ng-click="getSlideActive('language', 'Spanish')">
+						  	<img ng-src="{{ findLanguage('Spanish').image }}">
+						  	<label for="eng">Spanish</label>
+						  	<p class="item-right"><i class="ion-chevron-right"></i></p>
+						</div>
+					</div>
+						More coming soon
+			    </div>
+			    <!-- <div class="slide" id="slide-2">
+				    <div class="title">Pick a level of difficulty</div>
+				    <div class="list">
+						<div class="item" ng-repeat="level in levels" ng-click="getSlideActive('level', level.name)">
+						  	<label for="level">{{ level.name }}</label>
+						  	<p class="item-right"><i class="ion-chevron-right"></i></p>
+						</div>
+					</div>
+			    </div> -->
+			    <div class="slide" id="slide-2">
+				    <ng-include src="template"></ng-include>
+			    </div>
+			</div>
+			<p class="caption">Mexico City, Mexico</p>
+		</div>
+	</ion-content>
+</ion-view>

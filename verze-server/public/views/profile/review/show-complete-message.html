@@ -1,0 +1,60 @@
+	  	<div class="deck-finish-deck animated bounceInUp" ng-show="inDeck && learnMode[2]">
+	  		<img src="images/complete-badge.png">
+	  		<h4>You have finished learning the deck</h4>
+	  		<h2>{{ deck.content.name }}</h2>
+	  		<button class="btn btn-success" ng-click="continueReview()">Continue</button>
+	  	</div>
+	  	<div class="deck-finish-deck animated bounceInUp" ng-show="inDeck && reviewMode[1]">
+	  		<img src="images/complete-badge.png">
+	  		<h4>You have finished reviewing the deck</h4>
+	  		<h2>{{ deck.content.name }}</h2>
+	  		<button class="btn btn-success" ng-click="continueReview()">Continue</button>
+	  	</div>
+	  	<div class="deck-finish-deck animated bounceInUp" ng-show="inDeck && testMode[1]">
+	  		<img src="images/complete-badge.png">
+	  		<h4>You have finished testing the deck</h4>
+	  		<h2>{{ deck.content.name }}</h2>
+	  		<div class="deck-correct">{{ Math.floor(correctChoices/deck.content.cards.length*100) }}%</div>
+	  		<button class="btn btn-success" ng-click="continueReview()">Continue</button>
+	  	</div>
+	  	
+	  	<div class="deck-finish-course animated bounceInUp" ng-show="!inDeck && learnMode[2]">
+	  		<h3>Good job!</h3>
+	  		<img src="images/complete-badge.png">
+	  		<h4>You have finished learning the course</h4>
+	  		<h2>{{ course.content.name }}</h2>
+	  		<!-- leave a review -->
+	  		<button class='btn btn-success' style='font-size: 1.15em;' ng-click='showCourseComments()'>
+				Leave a comment
+				<i class='ion-chatbox'></i>
+				<p class='course-social-count' style='margin: 0px;'>{{ course.content.comments.length }}</p>
+			</button>
+	  		<button class="btn btn-success" ng-click="continueReview()">Back</button>
+	  	</div>
+	  	<div class="deck-finish-course animated bounceInUp" ng-show="!inDeck && reviewMode[1]">
+	  		<h3>Good job!</h3>
+	  		<img src="images/complete-badge.png">
+	  		<h4>You have finished reviewing the course</h4>
+	  		<h2>{{ course.content.name }}</h2>
+	  		<!-- leave a review -->
+	  		<button class='btn btn-success' style='font-size: 1.15em;' ng-click='showCourseComments()'>
+				Leave a comment
+				<i class='ion-chatbox'></i>
+				<p class='course-social-count' style='margin: 0px;'>{{ course.content.comments.length }}</p>
+			</button>
+	  		<button class="btn btn-success" ng-click="continueReview()">Back</button>
+	  	</div>
+	  	<div class="deck-finish-course animated bounceInUp" ng-show="!inDeck && testMode[1]">
+	  		<h3>Good job!</h3>
+	  		<img src="images/complete-badge.png">
+	  		<h4>You have finished testing the course</h4>
+	  		<h2>{{ course.content.name }}</h2>
+	  		<div class="course-correct">{{ Math.floor(correctChoices/sumCards*100) }}%</div>
+	  		<!-- leave a review -->
+	  		<button class='btn btn-success' style='font-size: 1.15em;' ng-click='showCourseComments()'>
+				Leave a comment
+				<i class='ion-chatbox'></i>
+				<p class='course-social-count' style='margin: 0px;'>{{ course.content.comments.length }}</p>
+			</button>
+	  		<button class="btn btn-success" ng-click="continueReview()">Back</button>
+	  	</div>

@@ -1,0 +1,17 @@
+
+		<div>
+			<div class="panel search-results-panel-tabs">
+				<ul class="search-results-navbar nav nav-tabs">
+					<li class="active search-results-tab cards-tab cards-trans" ng-click="switchResultsTab('Cards')">Cards</li>
+					<li class="search-results-tab decks-tab decks-trans" ng-click="switchResultsTab('Decks')">Decks</li>
+					<li class="search-results-tab courses-tab courses-trans" ng-click="switchResultsTab('Courses')">Courses</li>
+					<li class="search-results-tab users-tab users-trans" ng-click="switchResultsTab('Users')" ng-disabled="template.includes('categories')">Users</li>
+				</ul>
+			</div>
+			<div class="search-options">
+				<button type="button" class="btn" ng-click="openViewsPopover($event)"><span class="views-trans">Views</span> <i class="ion-eye"></i></button>
+				<button type="button" class="btn" ng-click="openSortByPopover($event)"><span class="sort-by-trans">Sort By</span> <i class="ion-navicon-round"></i></button>
+				<!-- <button type="button" class="btn" ng-click="openFilterPopover($event)">Filter <i class="ion-funnel"></i></button> -->
+			</div>
+			<ng-include src="searchTemplate"></ng-include>
+		</div>

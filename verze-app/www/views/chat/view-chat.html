@@ -1,0 +1,30 @@
+<ion-view view-title="{{ user.firstname }} {{ user.lastname }}">
+	<ion-nav-bar class="bar">
+		<ion-nav-back-button class="button-light">
+			<i class="ion-arrow-left-b"></i> Back
+		</ion-nav-back-button>
+		<ion-nav-buttons side="secondary">
+			<!-- <button type="button" ng-click="" class="btn"><i class="glyphicon glyphicon-facetime-video" style="font-size: 1.5em;"></i></button> -->
+			<button type="button" ng-click="" class="btn"><i class="ion-information-circled" style="font-size: 1.5em;"></i></button>
+			<button type="button" ng-click="" class="btn"><i class="ion-gear-a" style="font-size: 1.5em;"></i></button>
+		</ion-nav-buttons>
+	</ion-nav-bar>
+	<ion-content scroll="false">
+		<ion-scroll direction="y" class="chat-scroll">
+		<div ng-repeat="message in messages" ng-class="{other: message.userId != myId}" class="messages">
+	        <div class="message" ng-class="{'slide-right': hideTime, '': !hideTime}">
+	          <span>{{ message.text }}</span>
+	        </div>
+	        <div class="message-time" ng-class="{'slide-right': hideTime, '': !hideTime}">{{message.time}}</div>
+	      </div>
+	    </ion-scroll>
+      	<div class="bar-stable item-input-inset message-input-container">
+	      <label class="item-input-wrapper">
+	        <input type="text" placeholder="Type your message" on-return="sendMessage(); closeKeyboard()" ng-model="data.message" on-focus="inputUp()" on-blur="inputDown()" />
+	      </label>
+	      <button class="button button-clear" ng-click="sendMessage()">
+	        <i class="ion-paper-airplane"></i>
+	      </button>
+	    </div>
+	</ion-content>
+</ion-view>

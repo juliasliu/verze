@@ -1,0 +1,33 @@
+<div class="mini-message-container">
+		<div class="mini-message animated bounceInRight" ng-show="showCorrectBack">
+	  		<i class="ion-checkmark-round"></i>
+	  		<div class="message">Wow, nice job!</div>
+	  		<button class="btn btn-success" ng-click="next('mini')" ng-disabled="showCorrectBack">Next</button>
+	  		<div class="sub-message"><strong>{{ randomCard.frontphrase }}</strong> is <strong>{{ randomCard.backphrase }}</strong></div>
+	  	</div>
+	  	<div class="mini-message animated bounceInRight" ng-show="showCorrectFront">
+	  		<i class="ion-checkmark-round"></i>
+	  		<div class="message">Wow, nice job!</div>
+	  		<button class="btn btn-success" ng-click="next('mini')" ng-disabled="showCorrectFront">Next</button>
+	  		<div class="sub-message"><strong>{{ randomCard.frontphrase }}</strong> is <strong>{{ randomCard.backphrase }}</strong></div>
+	  	</div>
+	  	<div class="mini-message animated bounceInRight" ng-show="showIncorrectBack">
+	  		<i class="ion-close-round"></i>
+	  		<div class="message">Aw, you missed it.</div>
+	  		<button class="btn btn-success" ng-click="next('mini')">Next</button>
+	  		<div class="sub-message"><strong>{{ randomCard.frontphrase }}</strong> is <strong>{{ randomCard.backphrase }}</strong></div>
+	  	</div>
+	  	<div class="mini-message animated bounceInRight" ng-show="showIncorrectFront">
+	  		<i class="ion-close-round"></i>
+	  		<div class="message">Aw, you missed it.</div>
+	  		<button class="btn btn-success" ng-click="next('mini')">Next</button>
+	  		<div class="sub-message"><strong>{{ randomCard.frontphrase }}</strong> is <strong>{{ randomCard.backphrase }}</strong></div>
+	  	</div>
+	  	<div class="mini-message animated bounceInRight" ng-show="showTestCorrect">
+	  		<i class="ion-checkmark-round"></i>
+	  		<div class="message">Well Done!</div>
+	  		<button class="btn btn-success" ng-click="next('final')">Next</button>
+	  		<div class="sub-message" ng-show="isMatch">You completed the match game!</div>
+	  		<div class="sub-message" ng-show="isTest">You completed the section! Your score was {{ numCorrect }} out of {{ numTotal }}.</div>
+	  	</div>
+</div>

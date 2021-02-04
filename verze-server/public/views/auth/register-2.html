@@ -1,0 +1,35 @@
+
+	<div class="register-login-page">
+		<div class="login-form">
+			<div class="title register-trans">Register
+			</div>
+			<div class="form-group register-form-group">
+				<label for="firstname" class="labels">First Name</label> <input
+					type="text" class="form-control register-input" id="firstname"
+					placeholder="First Name" ng-model="user.firstname"></input>
+			</div>
+			<div class="form-group register-form-group">
+				<label for="lastname" class="labels">Last Name</label> <input
+					type="text" class="form-control register-input" id="lastname"
+					placeholder="Last Name" ng-model="user.lastname"></input>
+			</div>
+			<div class="form-group register-form-group">
+				<label for="country" class="labels">Country</label> <select
+					name="Country" class="form-control register-input" id="country"
+					ng-model="user.country">
+					<option ng-repeat="country in countries" value="{{ country.name }}">{{ country.name }}</option>
+				</select>
+			</div>
+			<!-- <div class="form-group register-form-group">
+				<label for="birthday" class="labels">Birthday</label> <input
+					type="date" class="form-control register-input" id="birthday"
+					ng-model="user.birthday"></input>
+			</div> -->
+			<div class="form-group register-form-group">
+				<input id="checkBox" type="checkbox" ng-model="vars.eula" style="min-width: auto;"><span> I have read and accept the <a ng-click="openEULA($event)">End User License Agreement</a>.</span>
+			</div>
+			<button class="btn btn-success btn-full-stretch" ng-click="register()">Register</button>
+			<!-- <button type="button" class="btn btn-primary btn-full-stretch" ng-click="switchRegisterTab('1')">Back</button> -->
+			<!-- <div class="register-login-bottom">Have an account? <a ui-sref="login">Login</a></div> -->
+		</div>
+	</div>

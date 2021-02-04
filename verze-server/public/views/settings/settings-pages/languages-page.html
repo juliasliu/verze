@@ -1,0 +1,17 @@
+<div class="settings-page">
+		<p>More languages coming soon! Stay tuned!</p>
+		<div class="list">
+			<div class="item item-avatar" ng-click="setLanguage('en')" ng-class="{ active: 'en' == languageName }">
+			  	<img ng-src="{{ findLanguage('English').image }}">
+			  	<label for="en">English (USA)</label>
+			</div>
+			<div class="item item-avatar" ng-click="setLanguage('es')" ng-class="{ active: 'es' == languageName }">
+			  	<img ng-src="{{ findLanguage('Spanish').image }}">
+			  	<label for="es">Español (México)</label>
+			</div>
+			<div class="item item-avatar" ng-click="setLanguage('ch')" ng-class="{ active: 'ch' == languageName }">
+			  	<img ng-src="{{ findLanguage('Chinese').image }}">
+			  	<label for="ch">中文 (简体)</label>
+			</div>
+		</div>
+	</div>

@@ -1,0 +1,21 @@
+<div class="instructions">Choose the translation</div>
+<div class="phrase" ng-hide="side.checked">
+	{{ randomCard.frontphrase }}
+</div>
+<div class="phrase" ng-show="side.checked">
+	{{ randomCard.backphrase }}
+</div>
+<div class="choices" ng-hide="side.checked">
+	<ul>
+		<li ng-repeat="choice in choices">
+			<div class="choice" ng-click="checkChoice('front', choice.backphrase)">{{ choice.backphrase }}</div>
+		</li>
+	</ul>
+</div>
+<div class="choices" ng-show="side.checked">
+	<ul>
+		<li ng-repeat="choice in choices">
+			<div class="choice" ng-click="checkChoice('back', choice.frontphrase)">{{ choice.frontphrase }}</div>
+		</li>
+	</ul>
+</div>

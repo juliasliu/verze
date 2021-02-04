@@ -1,0 +1,19 @@
+<div class="chat-page">
+		<div id="search-bar chat-search-bar">
+		    <div class="item item-input-inset">
+		      <label class="item-input-wrapper">
+		        <i class="icon ion-search placeholder-icon"></i>
+		        <input type="text" placeholder="Search" ng-model="query" ng-change="searchChat()" style="border: 0px !important; width: 100%;">
+		      </label>
+		    </div>
+		</div>
+		<div class="list chat-list">
+			<div class="list-header">Today</div>
+			<a class="item item-avatar" ui-sref="viewChat({username: 'verze'})">
+		    	<img src="images/icon.png" badge="1" badge-style="badge-assertive">
+		    	<p class="item-right">{{ (currentUser.createdAt) }}</p>
+		    	<h2>Verze</h2>
+		    	<p>Chat feature is coming soon!</p>
+		  	</a>
+		</div>
+</div>

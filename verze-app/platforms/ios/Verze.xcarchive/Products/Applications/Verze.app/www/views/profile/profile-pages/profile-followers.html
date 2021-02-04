@@ -1,0 +1,19 @@
+<ion-view view-title="Followers">
+	<ion-nav-bar class="bar-balanced">
+		<ion-nav-back-button class="button-clear">
+			<i class="ion-arrow-left-b"></i> Back
+		</ion-nav-back-button>
+	</ion-nav-bar>
+	<ion-content>
+		<ul class="list">
+	        <li ng-repeat="user in user.followers">
+	        	<user></user>
+	        </li>
+	    </ul>
+	    <div class="empty-tab" ng-show="emptyFollowers">
+			<i class="ion-sad-outline" style="font-size: 5em;"></i>
+			<h2>You Don't Have Any Followers.</h2>
+			<p>Make more content or follow other users.</p>
+		</div>
+	</ion-content>
+</ion-view>

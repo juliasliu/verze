@@ -1,0 +1,12 @@
+
+		<ul class="list follow-list">
+			<div class="title">Followers</div>
+	        <li ng-repeat="user in user.followers">
+	        	<user></user>
+	        </li>
+		    <div class="empty-tab" ng-show="emptyFollowers">
+				<i class="ion-sad-outline" style="font-size: 5em;"></i>
+				<h2>You Don't Have Any Followers.</h2>
+				<p>Make more content or follow other users.</p>
+			</div>
+	    </ul>

@@ -1,0 +1,14 @@
+<div class="profile-tabs-container loved-tab">
+	<div class="empty-tab" ng-show="emptyLoved">
+		<i class="ion-sad-outline" style="font-size: 5em;"></i>
+		<h3>You Haven't Loved Anything.</h3>
+		<p>Get started by loving content in the uniVerze.</p>
+	</div>
+	<div ng-hide="emptyLoved">
+		<ul><!-- ui-sref="tabs.viewCard({ id: card._id })" -->
+			<li ng-repeat="card in loved">
+				<thumbnail-card></thumbnail-card>
+			</li>
+		</ul>
+	</div>
+</div>

@@ -1,0 +1,21 @@
+<div class="instructions animated bounceIn">Choose the translation of what you hear</div>
+<div class="phrase dictation animated bounceIn" ng-hide="vars.language">
+	<i class="ion-volume-high" style="font-size: 2em;" ng-click="playAudio('front')"></i>
+</div>
+<div class="phrase dictation animated bounceIn" ng-show="vars.language">
+	<i class="ion-volume-high" style="font-size: 2em;" ng-click="playAudio('back')"></i>
+</div>
+<div class="choices" ng-hide="vars.language">
+	<ul>
+		<li ng-repeat="choice in choices">
+			<div class="choice animated bounceIn" ng-click="checkChoice('front', choice.backphrase)">{{ choice.backphrase }}</div>
+		</li>
+	</ul>
+</div>
+<div class="choices" ng-show="vars.language">
+	<ul>
+		<li ng-repeat="choice in choices">
+			<div class="choice animated bounceIn" ng-click="checkChoice('back', choice.frontphrase)">{{ choice.frontphrase }}</div>
+		</li>
+	</ul>
+</div>

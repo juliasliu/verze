@@ -1,0 +1,18 @@
+<div class="instructions animated bounceIn">Match the phrases with their audio</div>
+<div class="choices">
+	<ul>
+		<li ng-repeat="choice in frontChoices" class="choice animated bounceIn" ng-click="checkMatch('front', 'front', choice, true)">
+			<div class="phrase dictation">
+				<i class="ion-volume-high" style="font-size: 2em;" ng-click="playAudio('front', choice)"></i>
+				<div class="audio-answer" style="display: none;">{{ choice.frontphrase }}</div>
+			</div>
+		</li>
+	</ul>
+</div>
+<div class="choices">
+	<ul>
+		<li ng-repeat="choice in backChoices">
+			<div class="choice animated bounceIn" ng-click="checkMatch('front', 'front', choice)">{{ choice.frontphrase }}</div>
+		</li>
+	</ul>
+</div>

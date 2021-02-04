@@ -1,0 +1,22 @@
+<h4 class="media-trans">Media</h4>
+<div class="form-group row">
+	<label for="background"
+		class="form-control-label">Background Image</label>
+</div>
+<div>
+				<!-- <button type="button" class="btn btn-primary" ng-click="showMediaOptions('deck')">Upload</button> -->
+				<span class="btn btn-success fileinput-button">
+				       <i class="glyphicon glyphicon-plus"></i>
+				       <span>Select image</span>
+				       <!-- The file input field used as target for the file upload widget -->
+				       <input id="file" type="file" name="file" accept="image/*" custom-on-change="add">
+				   </span>
+		</div>
+
+<div class="form-group row">
+	<ul class="color-picker">
+	</ul>
+</div>
+<div>
+	<img ng-src="{{ card.image }}" id="image-preview" style="height:200px; margin: 20px 0;"/>
+</div>

@@ -1,0 +1,18 @@
+<div class="keyboard any type">
+	<div class="row">
+		<div class="key white" ng-repeat="char in characters track by $index">
+			<span>{{ char }}</span>
+		</div>
+            <div class="key gray backspace" style="float:right;">
+                <span>&#9003;</span>
+            </div>
+	</div>
+	<div class="row">
+		<div class="key white space">
+			<span>space</span>
+		</div>
+		<!-- <div class="key gray btn-success enter">
+			<span>enter</span>
+		</div> -->
+	</div>
+</div>

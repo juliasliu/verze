@@ -1,0 +1,49 @@
+<div class="chat-container">
+		<div class="chat-header">
+			<button type="button" ui-sref="chat" class="btn back-btn"><i class="ion-arrow-left-b"></i> Back</button>
+			<div class="chat-name">
+				{{ user.firstname }} {{ user.lastname }}
+			</div>
+			<span class="chat-header-right">
+				<button type="button" ng-click="" class="btn"><i class="ion-videocamera"></i></button>
+				<button type="button" ng-click="" class="btn"><i class="ion-information-circled"></i></button>
+				<button type="button" ng-click="" class="btn"><i class="ion-gear-a"></i></button>
+			</span>
+		</div>
+	<div class="chat-messages">
+		<div class="message-time">{{ rightNow }}</div>
+		<div ng-repeat="message in messages" ng-class="{other: message.user._id != currentUser._id}" class="messages" ng-mouseover="showMessageOptions($index)" ng-mouseout="hideMessageOptions($index)">
+	        <img ng-src="{{ message.user.avatar }}" class="message-avatar">
+		    <div class="message-container">
+			    <div class="message">
+			    	{{ message.text }}
+			    </div>
+			    <ul class="message-options animated fadeIn">
+			        <li><button type="button" class="btn btn-clear" ng-click=""><i class="ion-edit"></i></button></li>
+			        <li><button type="button" class="btn btn-clear" ng-click=""><i class="ion-loop"></i></button></li>
+			        <li><button type="button" class="btn btn-clear" ng-click=""><i class="ion-share"></i></button></li>
+			    </ul>
+			</div>
+	     </div>
+	</div>
+	<div class="chat-input">
+		<div class="bar-stable message-input-container">
+	      <div>
+		      <label class="item-input-wrapper">
+		        <input type="text" placeholder="Type your message" on-return="sendMessage(); closeKeyboard()" ng-model="data.message" on-focus="inputUp()" on-blur="inputDown()" />
+		      </label>
+		      <button class="btn btn-success btn-send" ng-click="sendMessage()">
+		        <i class="ion-paper-airplane"></i>
+		      </button>
+		  </div>
+	      <ul class="message-buttons-container">
+	      	<li><button type="button" class="btn btn-clear" ng-click=""><i class="ion-card"></i></button></li>
+	      	<li><button type="button" class="btn btn-clear" ng-click=""><i class="ion-filing"></i></button></li>
+	      	<li><button type="button" class="btn btn-clear" ng-click=""><i class="ion-images"></i></button></li>
+	      	<li><button type="button" class="btn btn-clear" ng-click=""><i class="ion-mic-a"></i></button></li>
+	      	<li><button type="button" class="btn btn-clear" ng-click=""><i class="ion-happy"></i></button></li>
+	      	<li><button type="button" class="btn btn-clear" ng-click=""><i class="ion-location"></i></button></li>
+	      </ul>
+	    </div>
+	</div>
+</div>

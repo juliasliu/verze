@@ -1,0 +1,22 @@
+<div class="profile-tabs-container cards-tab">
+	<div class="empty-tab" ng-show="emptyCards">
+		<i class="ion-sad-outline" style="font-size: 5em;"></i>
+		<h3>You Don't Have Any Cards.</h3>
+		<p>Get started by creating your own cards or saving other cards in the uniVerze.</p>
+	</div>
+	<div ng-hide="emptyCards">
+		<ul class="card-list active">
+			<li ng-repeat="card in cards | orderBy: '-updated_at' : true track by $index">
+				<thumbnail-card></thumbnail-card>
+			</li>
+		</ul>
+			<ul class="phrase-list">
+				<li class="phrase" ng-repeat="card in cards | orderBy: '-updated_at' : true track by $index">
+					<div class="front-phrase">{{ card.frontphrase }}</div>
+					<div class="front-pronun">{{ card.frontpronun }}</div>
+					<div class="back-pronun">{{ card.backpronun }}</div>
+					<div class="back-phrase">{{ card.backphrase }}</div>
+				</li>
+			</ul>
+	</div>
+</div>

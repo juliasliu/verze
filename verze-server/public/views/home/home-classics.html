@@ -1,0 +1,18 @@
+<div class="home-page home-classics">
+	<div class="title classics-trans">Classics</div>
+	<div class="subtitle classics-caption-trans">Official courses and decks made by Verze</div>
+	<div class="list home-list">
+		<div class="list-header courses-trans">Courses</div>
+			<ul class="recent-decks-courses">
+				<li ng-repeat="course in classicCourses track by $index">
+					<course></course>
+				</li>
+			</ul>
+		<div class="list-header decks-trans">Decks</div>
+			<ul class="recent-decks-courses">
+		   		<li ng-repeat="deck in classicDecks track by $index">
+					<deck></deck>
+				</li>
+			</ul>
+	</div>
+</div>

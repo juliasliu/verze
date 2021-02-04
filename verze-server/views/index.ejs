@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Verze</title>
+	
+	<link rel="icon" href="../images/icon.png">
+
+	<!-- EXTERNAL CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/nightly/css/ionic.css">
+
+    <!-- LOCAL CSS -->
+    <link rel="stylesheet" href="css/website-style.css">
+	<!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="css/ionic.app.min.css">
+    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="lib/bootstrap-social/bootstrap-social.css">
+	<link rel="stylesheet" href="css/hover-min.css"/>
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/slick.css"/>
+	<link rel="stylesheet" href="css/slick-theme.css"/>
+	<link rel="stylesheet" href="css/textAngular.css">
+	
+	<!-- Plugin-CSS -->
+    <!-- <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/linearicons.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/animate.css"> -->
+    <!-- Main-Stylesheets -->
+    <!-- <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/appy-style.css">
+    <link rel="stylesheet" href="css/responsive.css"> -->
+    
+    <!-- EXTERNAL JAVASCRIPT -->
+    <script src="https://code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- LOCAL JAVASCRIPT -->
+    
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    
+    <!-- cordova script (this will be a 404 during development) -->
+    <!-- <script src="cordova.js"></script> -->
+
+ 	<!-- controllers -->
+    <script type="text/javascript" src="js/controllers/app.js"></script>
+    <script type="text/javascript" src="js/controllers/authctrl.js"></script>
+    <script type="text/javascript" src="js/controllers/cardctrl.js"></script>
+    <script type="text/javascript" src="js/controllers/chatctrl.js"></script>
+    <script type="text/javascript" src="js/controllers/createctrl.js"></script>
+    <script type="text/javascript" src="js/controllers/deckcoursectrl.js"></script>
+    <script type="text/javascript" src="js/controllers/homectrl.js"></script>
+    <script type="text/javascript" src="js/controllers/mectrl.js"></script>
+    <script type="text/javascript" src="js/controllers/searchctrl.js"></script>
+    <script type="text/javascript" src="js/controllers/settingsctrl.js"></script>
+
+	<!-- directives -->
+    <script type="text/javascript" src="js/directives/card.js"></script>
+    <script type="text/javascript" src="js/directives/course.js"></script>
+    <script type="text/javascript" src="js/directives/deck.js"></script>
+    <script type="text/javascript" src="js/directives/filters.js"></script>
+    <script type="text/javascript" src="js/directives/functions.js"></script>
+    <script type="text/javascript" src="js/directives/user.js"></script>
+	
+	<!-- services -->
+    <script type="text/javascript" src="js/services/auth.js"></script>
+    <script type="text/javascript" src="js/services/cards.js"></script>
+    <script type="text/javascript" src="js/services/check.js"></script>
+    <script type="text/javascript" src="js/services/file.js"></script>
+    <script type="text/javascript" src="js/services/format.js"></script>
+    <script type="text/javascript" src="js/services/language.js"></script>
+    <script type="text/javascript" src="js/services/misc.js"></script>
+    <script type="text/javascript" src="js/services/promise.js"></script>
+    <script type="text/javascript" src="js/services/report.js"></script>
+    <script type="text/javascript" src="js/services/users.js"></script>
+ 	
+	<!-- vendor -->
+    <script type="text/javascript" src="js/vendor/ng-cordova.min.js"></script>
+    <script type="text/javascript" src="js/vendor/wavesurfer.min.js"></script>
+    <script type="text/javascript" src="js/vendor/ionic.swipecards.js"></script>
+    <script type="text/javascript" src="js/vendor/ng-file-upload.min.js"></script>
+    <script type="text/javascript" src="js/vendor/bootstrap-tagsinput.js"></script>
+    <script type="text/javascript" src="js/vendor/wow.min.js"></script>
+    <script type="text/javascript" src="js/vendor/autoresize.js"></script>
+    <script src='http://textangular.com/dist/textAngular-rangy.min.js'></script>
+    <script src='http://textangular.com/dist/textAngular-sanitize.min.js'></script>
+    <script src='http://textangular.com/dist/textAngular.min.js'></script>
+    
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Grand+Hotel" rel="stylesheet">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-142504345-3"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'UA-142504345-3');
+	</script>
+    
+    <script>
+        new WOW().init();
+    </script>
+  </head>
+  <body ng-app="App">
+  	<div class="navbar top" ng-controller="StartCtrl">
+		<div class="navbar-header">
+		     <a class="navbar-brand" href="#">
+				<button type="button" class="btn active wrapper">
+					<img src="../images/icon.png">
+					<div class="title" ng-show="onStart">Verze</div>
+				</button>
+			</a>
+		</div>
+		<div class="navbar-header home center" ng-hide="onStart">
+			<ul class="nav navbar-nav navbar-center">
+				<!-- <li><a ui-sref="home"><button type="button" class="btn"><i class="ion-home"></i></button></a></li>
+				<li><a ui-sref="search"><button type="button" class="btn"><i class="ion-earth"></i></button></a></li> -->
+				<li class="search-dropdown">
+					<form pretty-submit>
+						<div id="search-bar">
+						    <div class="item item-input-inset">
+						      <label class="item-input-wrapper">
+						        <i class="icon ion-search placeholder-icon"></i>
+						        <input type="search" class="search-bar dropdown-input search-bar-trans" placeholder="Search cards, decks, courses, and users" ng-model="query">
+						      </label>
+						    </div>
+						</div>
+					</form>
+					<div class="dropdown-content">
+						    <div class="dropdown submenu">
+						    	<button type="button" class="btn dropdown-btn search-dropdown-btn"><i class="ion-quote"></i><span class="dropdown-label languages-trans">Languages</span></button>
+						    	<div class="dropdown-content submenu">
+						    		<ion-scroll direction="y">
+						    		<a ng-repeat="language in languages" ui-sref="searchLanguage({language: language.name})"><img ng-src="{{ language.image }}"><span class="dropdown-label">{{ language.name }}</span></a>
+						    		</ion-scroll>
+						    	</div>
+						    </div>
+						    <div class="dropdown submenu">
+						    	<button type="button" class="btn dropdown-btn search-dropdown-btn"><i class="ion-briefcase"></i><span class="dropdown-label categories-trans">Categories</span></button>
+						    	<div class="dropdown-content submenu">
+						    		<ion-scroll direction="y">
+						    		<a ng-repeat="category in categories" ui-sref="searchCategory({category: category.name})"><img ng-src="{{ category.image }}"><span class="dropdown-label">{{ category.name }}</span></a>
+						    		</ion-scroll>
+						    	</div>
+						    </div>
+					</div>
+				</li>
+			    <li class="dropdown">
+			    		<a><button type="button" class="btn dropdown-btn"><i class="ion-plus-circled"></i> <span>Create<span></button></a>
+			    		<div class="dropdown-content">
+						    <a ui-sref="createCard"><i class="ion-plus-round"></i><span class="dropdown-label create-card-trans">Create Card</span></a>
+						    <a ui-sref="createDeck"><i class="ion-plus-round"></i><span class="dropdown-label create-deck-trans">Create Deck</span></a>
+						    <a ui-sref="createCourse"><i class="ion-plus-round"></i><span class="dropdown-label create-course-trans">Create Course</span></a>
+						  </div>
+			    </li>
+				<li><a ui-sref="chat"><button type="button" class="btn"><i class="ion-chatboxes"></i> <span>Messages</span></button></a></li>
+			</ul>
+		</div>
+		<div class="navbar-header home right" ng-hide="onStart">
+		    <ul class="nav navbar-nav navbar-right">
+		    	<li ng-show="currentUser.username == 'verze'">
+		    		<a ui-sref="notifications" class="notifications">
+		    			<div class="container">
+						  	<button class="btn">
+						    	<i class="ion-ios-bell"></i>
+						  	</button>
+						  	<div class="btn-badge badge-notify">3</div>
+						</div>
+		    			<!-- <button type="button" class="btn"><i class="ion-ios-bell"></i></button> -->
+		    		</a>
+		    	</li>
+				<li class="me-button dropdown">
+					<button type="button" class="dropdown-btn">
+						<a ui-sref="me">
+							<img ng-src='{{ currentUser.avatar }}'>
+						</a>
+					</button>
+					<div class="dropdown-content">
+					    <ul class="me-blurb">
+	    					<li class="profile-avatar">
+	    						<img ng-src='{{ currentUser.avatar }}'>
+	    					</li>
+	    					<li class="profile-username">
+	    						@{{ currentUser.username }}
+	    					</li>
+	    					<li class="profile-name">
+	    						{{ currentUser.firstname }}
+	    					</li>
+	    					<li class="profile-location">
+	    						{{ currentUser.country }}
+	    					</li>
+	    					<li class="profile-exp">
+								<i class="ion-connection-bars"></i><p class="profile-points">{{ currentUser.exp }} <span id="points" class="points-trans">Points</span></p>
+								<i class="ion-ribbon-b"></i><p class="profile-badges" ui-sref="tabs.badges({ username: currentUser.username })">{{ user.badges.length }} <span id="badges" class="badges-trans">Badges</span></p>
+							</li>
+			    			<li class="profile-level">
+			    				<div class="languages-trans">Languages</div>
+								<span ng-show="currentUser.languages.length == 0" class="none-trans">None</span>
+								<ul class="languages-list">
+									<ion-scroll direction="x">
+										<li ng-repeat="language in currentUser.languages">
+											<img class="lang-thumbnail" ng-src='{{ findLanguage(language.name).image }}'>
+										</li>
+									</ion-scroll>
+								</ul>
+							</li>
+    				  	</ul>
+					  </div>
+				</li>
+				<li class="dropdown">
+					<button type="button" class="btn arrow-btn dropdown-btn"><i class="ion-arrow-down-b"></i></button>
+					<div class="dropdown-content">
+					    <a ui-sref="settings"><i class="ion-gear-a"></i><span class="dropdown-label settings-trans">Settings</span></a>
+					    <a ui-sref="faq"><i class="ion-help-circled"></i><span class="dropdown-label help-trans">Help</span></a>
+					    <a ng-click="logOut()" class="logout-btn"><i class="ion-unlocked"></i><span class="dropdown-label log-out-trans">Log Out</span></a>
+					  </div>
+				</li>
+			</ul>
+		</div>
+		<div class="navbar-header start right" ng-show="onStart">
+		    <ul class="nav navbar-nav navbar-right register-login-nav">
+			   <li><a ui-sref="login"><button type="button" class="btn btn-inverted"><span class="login-trans">Login</span></button></a></li>
+			   <li><a ui-sref="getStarted"><button type="button" class="btn btn-verted"><span class="register-trans">Register</span></button></a></li>
+			   <li class="dropdown language-dropdown">
+					<img ng-src="{{ findLanguage('', languageName).image }}" class="dropdown-avatar">
+					<div class="dropdown-content">
+					    <div class="list">
+							<div class="item item-avatar" ng-click="setLanguage('en')" ng-class="{ active: 'en' == languageName }">
+							  	<img ng-src="{{ findLanguage('English').image }}">
+							  	<label for="en">English (USA)</label>
+							</div>
+							<div class="item item-avatar" ng-click="setLanguage('es')" ng-class="{ active: 'es' == languageName }">
+							  	<img ng-src="{{ findLanguage('Spanish').image }}">
+							  	<label for="es">Español (México)</label>
+							</div>
+							<div class="item item-avatar" ng-click="setLanguage('ch')" ng-class="{ active: 'ch' == languageName }">
+							  	<img ng-src="{{ findLanguage('Chinese').image }}">
+							  	<label for="ch">中文 (简体)</label>
+							</div>
+						</div>
+					  </div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<ui-view></ui-view>
+	<div class="main-footer wrapper">
+	  	<div class="main-footer-section">
+	  		<div class="footer-brand">Verze</div>
+	  		<div class="footer-caption footer-caption-trans">Follow us and the online community.</div>
+			<div class="social-buttons">
+				<a href="fb.me/Verzee.Inc"><button type="button" class="btn"><i class="ion-social-facebook"></i></button></a>
+				<a href="https://www.twitter.com/verze_inc"><button type="button" class="btn"><i class="ion-social-twitter"></i></button></a>
+				<a href="https://www.instagram.com/verze.inc"><button type="button" class="btn"><i class="ion-social-instagram"></i></button></a>
+			</div>
+			<p class="copyright">© 2018 Julia Liu</p>
+	  	</div>
+	  	<div class="main-footer-section second">
+	  		<h4 class="about-trans">About</h4>
+	  		<ul>
+	  			<li><a ui-sref="about" class="about-trans">About</a></li>
+	  			<li><a ui-sref="report" class="contact-us-trans">Contact Us</a></li>
+	  			<!--<li><a>Team</a></li>-->
+	  			<li><a ui-sref="jobs" class="jobs-trans">Jobs</a></li>
+	  			<li><a ui-sref="ads" class="ads-trans">Ads</a></li>
+	  		</ul>
+	  	</div>
+	  	<div class="main-footer-section">
+	  		<h4 class="links-trans">Links</h4>
+	  		<ul>
+	  			<li><a href="https://verzee.github.io/#/blog" class="blog-trans">Blog</a></li>
+	  			<li><a ui-sref="report" class="report-trans">Report</a></li>
+	  			<li><a ui-sref="faq" class="faq-trans">FAQ</a></li>
+	  		</ul>
+	  	</div>
+	  </div> 
+  </body>
+</html>

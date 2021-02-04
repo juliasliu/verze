@@ -1,0 +1,31 @@
+<ion-modal-view>
+	<ion-header-bar class="bar-balanced">
+		<h1 class="title header-title">Change View</h1>
+		<div class="secondary-header search-header">
+			<button class="btn btn-primary" type="button" ng-click="searchView()">Browse</button>
+		</div>
+	</ion-header-bar>
+	<ion-content>
+  		<div class="list sort-by-list">
+			<div class="list-header">Views</div>
+			<div class="item item-icon-left">
+			  	<i class="icon ion-heart"></i>
+			  	<label for="card">
+			  		<input type="checkbox" id="card" value="card" name="foohy[1][]" ng-model="searchViewVars.card">
+			  	Full Card</label>
+			</div>
+			<div class="item item-icon-left">
+			  	<i class="icon ion-plus-round"></i>
+			  	<label for="preview">
+			  		<input type="checkbox" id="preview" value="preview" name="foohy[1][]" ng-model="searchViewVars.preview">
+			  	Preview</label>
+			</div>
+			<div class="item item-icon-left">
+			  	<i class="icon ion-clock"></i>
+			  	<label for="thumbnail">
+			  		<input type="checkbox" id="thumbnail" value="thumbnail" name="foohy[1][]" ng-model="searchViewVars.thumbnail">
+			  	Thumbnail</label>
+			</div>
+		</div>
+	</ion-content>
+</ion-modal-view>

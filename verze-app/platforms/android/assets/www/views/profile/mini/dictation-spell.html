@@ -1,0 +1,15 @@
+<div class="instructions">Type the phrase of what you hear</div>
+<div class="phrase dictation" ng-hide="side.checked">
+	<i class="ion-volume-high" style="font-size: 2em;" ng-click="playAudio('front')"></i>
+</div>
+<div class="phrase dictation" ng-show="side.checked">
+	<i class="ion-volume-high" style="font-size: 2em;" ng-click="playAudio('back')"></i>
+</div>
+<div class="choices">
+	<textarea cols="40" rows="2" class="form-control spell-form" placeholder="Phrase" ng-model="answer" readonly disabled></textarea>
+	<!-- <input type="text" class="form-control spell-form" placeholder="Translation" ng-model="answer" readonly></input> -->
+	<!-- <button type="button" class="btn btn-success" ng-click="checkChoice(answer, 'front')">Enter</button> -->
+</div>
+<div class="keyboard-container">
+	<ng-include src="keyboardTemplate"></ng-include>
+</div>

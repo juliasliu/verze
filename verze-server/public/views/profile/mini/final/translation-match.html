@@ -1,0 +1,15 @@
+<div class="instructions animated bounceIn">Match the phrases with their translations</div>
+<div class="choices">
+	<ul>
+		<li ng-repeat="choice in frontChoices">
+			<div class="choice animated bounceIn" ng-click="checkMatch('back', 'front', choice)">{{ choice.frontphrase }}</div>
+		</li>
+	</ul>
+</div>
+<div class="choices">
+	<ul>
+		<li ng-repeat="choice in backChoices">
+			<div class="choice animated bounceIn" ng-click="checkMatch('front', 'back', choice)">{{ choice.backphrase }}</div>
+		</li>
+	</ul>
+</div>

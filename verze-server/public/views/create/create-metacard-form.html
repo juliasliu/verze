@@ -1,0 +1,30 @@
+<div class="wrapper">
+		<div class="metacard">
+		  		<div class="metacard-body" ng-model="htmlcontent"></div>
+		  	</div>
+		<form class="create-form">
+				<h3 ng-hide="editTestMode">Create Metacard</h3>
+				<h3 ng-show="editTestMode">Edit Metacard</h3>
+				<button type="submit" ng-click="addMetacard()" class="btn btn-primary submit-create-btn"><i class="ion-paper-airplane"></i></button>
+			<div class="form-group">
+				<label for="card-deck" class="col-xs-2 form-control-label">Deck</label>
+				<select name="Deck" class="form-control" ng-model="metacard.deck" id="card-deck">
+					<option value=null>None</option>
+					<option ng-repeat="deck in myDecks | authoredBy: currentUser.username" value="{{ deck.content }}">{{ deck.content.name }}</option>
+				</select><!--  - {{ getCourseOfDeck(deck) }} -->
+			</div>
+			<div class="form-group">
+				<label for="deck-course">Course</label>
+				<select name="Course" class="form-control" id="deck-course" ng-model="metacard.course">
+					<option value=null>None</option>
+					<option ng-repeat="course in myCourses | authoredBy: currentUser.username" value="{{ course.content }}">{{ course.content.name }}</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="order">Order</label>
+				<input type="text" class="form-control" id="order" placeholder="1, 2, 3, etc." ng-model="metacard.order"></input>
+			</div>
+			<div text-angular="text-angular" name="htmlcontent" ng-model="htmlcontent" ta-disabled='disabled' class="form-group"></div>
+			<textarea ng-model="htmlcontent" style="width: 100%;"></textarea>
+		</form>
+</div>

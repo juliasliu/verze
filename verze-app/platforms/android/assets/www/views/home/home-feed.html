@@ -1,0 +1,115 @@
+<ion-refresher pulling-text="Pull to refresh..." on-refresh="refreshMe()"></ion-refresher>
+<div class="slideshow">
+	<span class="upper">Hot Picks</span>
+	<div class="slide" ng-repeat="hotPick in hotPicks" ng-click='onHotPickClick(hotPick)' style="background-color: {{ hotPick.background }}">
+		<div class="title">{{ hotPick.content.name }}</div>
+		<button class='author btn mini-avatar'>
+			<img ng-src='{{ hotPick.content.author.avatar }}'>
+			<p style='display: inline-block;'>@{{ hotPick.content.author.username }}</p>
+		</button>
+		<img class="image" ng-src="{{ hotPick.content.image }}">
+	</div>
+</div>
+<div class="list">
+	<!-- <div class="list-header">Trending</div>
+		<ul class="recent-decks-courses">
+		<ion-scroll direction="x">
+	   		<li ng-repeat="deck in decks">
+				<thumbnail-deck></thumbnail-deck>
+			</li>
+			<li ng-repeat="course in courses">
+				<thumbnail-course></thumbnail-course>
+			</li>
+		</ion-scroll>
+		</ul> -->
+	<!-- <div class="list-header" ng-hide="emptyDecks && emptyCourses && emptyCards">Recommended</div>
+		<ul class="recent-decks-courses" ng-hide="emptyDecks && emptyCourses && emptyCards">
+		<ion-scroll direction="x">
+	   		<li ng-repeat="deck in decks">
+				<thumbnail-deck></thumbnail-deck>
+			</li>
+			<li ng-repeat="course in courses">
+				<thumbnail-course></thumbnail-course>
+			</li>
+		</ion-scroll>
+		</ul> -->
+	<div class="list-header" ng-show="(decks | lastReviewed:'Today').length || (courses | lastReviewed:'Today').length">Today</div>
+		<ul class="recent-decks-courses" ng-show="(decks | lastReviewed:'Today').length || (courses | lastReviewed:'Today').length">
+		<ion-scroll direction="x">
+	   		<li ng-repeat="deck in (decks | lastReviewed:'Today')">
+				<thumbnail-deck></thumbnail-deck>
+			</li>
+			<li ng-repeat="course in (courses | lastReviewed:'Today')">
+				<thumbnail-course></thumbnail-course>
+			</li>
+		</ion-scroll>
+		</ul>
+	<div class="list-header" ng-show="(decks | lastReviewed:'Week').length || (courses | lastReviewed:'Week').length">This Week</div>
+		<ul class="recent-decks-courses" ng-show="(decks | lastReviewed:'Week').length || (courses | lastReviewed:'Week').length">
+		<ion-scroll direction="x">
+	   		<li ng-repeat="deck in (decks | lastReviewed:'Week')">
+				<thumbnail-deck></thumbnail-deck>
+			</li>
+			<li ng-repeat="course in (courses | lastReviewed:'Week')">
+				<thumbnail-course></thumbnail-course>
+			</li>
+		</ion-scroll>
+		</ul>
+	<div class="list-header" ng-show="(decks | lastReviewed:'Month').length || (courses | lastReviewed:'Month').length">This Month</div>
+		<ul class="recent-decks-courses" ng-show="(decks | lastReviewed:'Month').length || (courses | lastReviewed:'Month').length">
+		<ion-scroll direction="x">
+	   		<li ng-repeat="deck in (decks | lastReviewed:'Month')">
+				<thumbnail-deck></thumbnail-deck>
+			</li>
+			<li ng-repeat="course in (courses | lastReviewed:'Month')">
+				<thumbnail-course></thumbnail-course>
+			</li>
+		</ion-scroll>
+		</ul>
+	<div class="list-header" ng-show="(decks | lastReviewed:'Older').length || (courses | lastReviewed:'Older').length">Welcome Back</div>
+		<ul class="recent-decks-courses" ng-show="(decks | lastReviewed:'Older').length || (courses | lastReviewed:'Older').length">
+		<ion-scroll direction="x">
+	   		<li ng-repeat="deck in (decks | lastReviewed:'Older')">
+				<thumbnail-deck></thumbnail-deck>
+			</li>
+			<li ng-repeat="course in (courses | lastReviewed:'Older')">
+				<thumbnail-course></thumbnail-course>
+			</li>
+		</ion-scroll>
+		</ul>
+	<!-- <div class="list-header">Following</div>
+		<ul class="recent-decks-courses">
+		<ion-scroll direction="x">
+	   		<li ng-repeat="deck in followedDecks">
+				<thumbnail-deck></thumbnail-deck>
+			</li>
+			<li ng-repeat="course in followedCourses">
+				<thumbnail-course></thumbnail-course>
+			</li>
+		</ion-scroll>
+		</ul> -->
+	<!-- <div class="list-header">Recommended Users</div>
+		<ul class="recent-decks-courses">
+		<ion-scroll direction="x">
+	   		<li ng-repeat="user in recommendedUsers">
+				<thumbnail-user></thumbnail-user>
+			</li>
+		</ion-scroll>
+		</ul> -->
+	<div class="list-header">Courses</div>
+		<ul class="recent-decks-courses">
+		<ion-scroll direction="x">
+			<li ng-repeat="course in classicCourses">
+				<thumbnail-course></thumbnail-course>
+			</li>
+		</ion-scroll>
+		</ul>
+	<div class="list-header">Decks</div>
+		<ul class="recent-decks-courses">
+		<ion-scroll direction="x">
+	   		<li ng-repeat="deck in classicDecks">
+				<thumbnail-deck></thumbnail-deck>
+			</li>
+		</ion-scroll>
+		</ul>
+</div>

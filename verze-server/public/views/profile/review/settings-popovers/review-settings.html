@@ -1,0 +1,64 @@
+<ion-popover-view style="height: 220px; min-width: 400px;">
+    <ion-header-bar>
+      <h1 class="title">Learn Settings</h1>
+    </ion-header-bar>
+    <ion-content>
+    	<div class="list popover-list review-settings-list">
+	      <!-- <a class="item" ng-click="shuffle()">Shuffle <i class="ion-shuffle item-right"></i></a>
+	      <a class="item" ng-click="play()">Play <i class="ion-play item-right"></i></a> -->
+	      <!-- <div class="item">
+	      	  Screen keyboard
+		      <label class="switch">
+				  <input type="checkbox" class="keyboard-switch" ng-model="vars.keyboard">
+				  <div class="slider"></div>
+				</label>
+		      Embedded keyboard
+	      </div> -->
+		  <div class="list-header">Reading</div>
+	      <div class="item" ng-click="toggleReviewSettings()" ng-disabled="true">
+	    		<!-- <label for="example"> -->
+	    		Reading exercises
+			  		<input type="checkbox" class="item-right" id="reading" value="reading" ng-model="reviewSettings.showReading">
+			  	<!-- </label> -->
+	    	</div>
+		  <div class="list-header">Listening</div>
+	      <div class="item" ng-click="toggleReviewSettings()" ng-disabled="true">
+	    		<!-- <label for="example"> -->
+	    		Listening exercises
+			  		<input type="checkbox" class="item-right" id="listening" value="listening" ng-model="reviewSettings.showListening">
+			  	<!-- </label> -->
+	    	</div>
+	      <div class="list-header">Writing</div>
+	      <div class="item" ng-click="toggleReviewSettings()" ng-disabled="true">
+	    		<!-- <label for="example"> -->
+	    		Spelling
+			  		<input type="checkbox" class="item-right" id="spelling" value="spelling" ng-model="reviewSettings.showSpelling">
+			  	<!-- </label> -->
+	    	</div>
+	      <div class="item" ng-click="toggleReviewSettings()" ng-disabled="true">
+	    		<!-- <label for="example"> -->
+	    		Typing
+			  		<input type="checkbox" class="item-right" id="typing" value="typing" ng-model="reviewSettings.showTyping">
+			  	<!-- </label> -->
+	    	</div>
+	    	<div class="item" ng-click="toggleReviewSettings()" ng-disabled="true">
+	    		<!-- <label for="example"> -->
+	    		Handwriting
+			  		<input type="checkbox" class="item-right" id="handwriting" value="handwriting" ng-model="reviewSettings.showHandwriting">
+			  	<!-- </label> -->
+	    	</div>
+	      <div class="list-header">Speaking</div>
+	      <div class="item" ng-click="toggleReviewSettings()" ng-disabled="true">
+	    		<!-- <label for="example"> -->
+	    		Speaking exercises
+			  		<input type="checkbox" class="item-right" id="speaking" value="speaking" ng-model="reviewSettings.showSpeaking">
+			  	<!-- </label> -->
+	    	</div>
+	    	
+		  <div class="list-header">General</div>
+	      <div class="item" ng-click="restartReview()">
+	      		Restart Review <i class="ion-refresh item-right"></i>
+	      </div>
+	    </div>
+    </ion-content>
+ </ion-popover-view>

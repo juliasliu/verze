@@ -1,0 +1,48 @@
+	<div class="start-page front">
+	  <div class="main-page">
+	  	<div class="top-section overlay">
+		  	<div class="title">Learn a language in 7 days.</div>
+		  	<div class="top-section-columns">
+	  			<div class="sub-section">
+		  			<img src="../images/cards.png">
+		  			<div class="title">Cards</div>
+		  			<div class="subtitle">Virtual flashcards to improve your listening, reading, and visual connection skills.</div>
+		  		</div>
+		  		<div class="sub-section">
+		  			<img src="../images/progress.png">
+		  			<div class="title">Progress</div>
+		  			<div class="subtitle">Refresh your memory with fun comprehensive games that test your vocabulary.</div>
+		  		</div>
+		  		<div class="sub-section">
+		  			<img src="../images/social.png">
+		  			<div class="title">Social</div>
+		  			<div class="subtitle">Engage with other users in real-time, interactive, AI-enhanced chat sessions.</div>
+		  		</div>
+		  	</div>
+		  	<a ui-sref="getStarted"><button type="button" class="btn btn-inverted">Get Started</button></a>
+		  	<!-- <div class="image-caption">New York City, New York, United States</div> -->
+		</div>
+	  	<div class="main-section">
+	  		<div class="title">10 languages. 10 worlds to explore.</div>
+	  		<div class="subtitle">We have original courses in Chinese and Spanish and offer other available languages.</div>
+	  		<ul class="language-list">
+	  			<li ng-repeat="language in languages">
+	  				<img ng-src="{{ language.image }}">
+					<div>{{language.name}}</div>
+	  			</li>
+	  		</ul>
+	  	</div>
+	  	<div class="main-section light">
+	  		<div class="wrapper">
+		  		<div class="section-left">
+		  			<img src="../images/screenshot.png">
+		  		</div>
+		  		<div class="section-right">
+			  		<div class="title">Bring us on the go.</div>
+			  		<div class="subtitle">Download the app on your iOS devices so you can learn wherever you go. Get started on a course for a new language or browse through more topic-focused decks!</div>
+			  		<a href="https://itunes.apple.com/us/app/verze/id1314271545?ls=1&mt=8"><button type="button" class="btn btn-primary">Download for iOS</button></a>
+			  	</div>
+			</div>
+	  	</div>
+	  </div>
+</div>

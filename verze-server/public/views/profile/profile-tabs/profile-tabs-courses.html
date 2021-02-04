@@ -1,0 +1,14 @@
+<div class="profile-tabs-container courses-tab-container">
+	<div class="empty-tab" ng-show="emptyCourses">
+		<i class="ion-sad-outline" style="font-size: 5em;"></i>
+		<h3>You Don't Have Any Courses.</h3>
+		<p>Get started by creating your own courses or starting other courses in the uniVerze.</p>
+	</div>
+	<div ng-hide="emptyCourses">
+		<ul>
+			<li ng-repeat="course in courses | orderBy: '-updated_at' : true">
+				<course></course>
+			</li>
+		</ul>
+	</div>
+</div>

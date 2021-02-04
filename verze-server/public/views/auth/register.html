@@ -1,0 +1,50 @@
+<div class="start-page overlay">
+	<div class="register-login-page">
+		<div class="login-form">
+			<div class="welcome-back">Register
+			</div>
+			<div class="form-group register-form-group">
+				<label for="username" class="register-labels">Username</label> <input
+					type="text" class="form-control register-input" id="username"
+					placeholder="username" ng-model="user.username" autocapitalize="off"></input>
+			</div>
+			<div class="form-group register-form-group">
+				<label for="password" class="register-labels">Password</label> <input
+					type="password" class="form-control register-input" id="password"
+					placeholder="••••••••••" ng-model="user.password"></input>
+			</div>
+			<div class="form-group register-form-group">
+				<label for="email" class="register-labels">Email</label> <input
+					type="email" class="form-control register-input" id="email"
+					placeholder="Email" ng-model="user.email"></input>
+			</div>
+			<div class="form-group register-form-group">
+				<label for="firstname" class="register-labels">First Name</label> <input
+					type="text" class="form-control register-input" id="firstname"
+					placeholder="First Name" ng-model="user.firstname"></input>
+			</div>
+			<div class="form-group register-form-group">
+				<label for="lastname" class="register-labels">Last Name</label> <input
+					type="text" class="form-control register-input" id="lastname"
+					placeholder="Last Name" ng-model="user.lastname"></input>
+			</div>
+			<div class="form-group register-form-group">
+				<label for="country" class="register-labels">Country</label> <select
+					name="Country" class="form-control register-input" id="country"
+					ng-model="user.country">
+					<option ng-repeat="country in countries" value="{{ country.name }}">{{
+						country.name }}</option>
+				</select>
+			</div>
+			<!-- <div class="form-group register-form-group">
+				<label for="birthday" class="register-labels">Birthday</label> <input
+					type="date" class="form-control register-input" id="birthday"
+					ng-model="user.birthday"></input>
+			</div> -->
+			<div class="form-group register-form-group">
+				<input id="checkBox" type="checkbox" ng-model="vars.eula" style="min-width: auto;"><span> I have read and accept the <a ng-click="openEULA($event)">End User License Agreement</a>.</span>
+			</div>
+			<button class="btn btn-success btn-full-stretch" ng-click="register()">Register</button>
+		</div>
+	</div>
+</div>

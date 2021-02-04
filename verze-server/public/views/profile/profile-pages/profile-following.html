@@ -1,0 +1,12 @@
+
+		<ul class="list follow-list">
+			<div class="title">Following</div>
+	        <li ng-repeat="user in user.following">
+	        	<user></user>
+	        </li>
+		    <div class="empty-tab" ng-show="emptyFollowing">
+				<i class="ion-sad-outline" style="font-size: 5em;"></i>
+				<h2>You Don't Follow Anyone.</h2>
+				<p>Get started by following other users.</p>
+			</div>
+	    </ul>

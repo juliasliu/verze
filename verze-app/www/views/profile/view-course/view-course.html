@@ -1,0 +1,90 @@
+<!-- <ion-modal-view>
+	<ion-header-bar class="bar-balanced">
+		<h1 class="title">Course</h1>
+		<button class="btn" ng-click="closeCourse()"><i class="ion-close" style="font-size: 2em;"></i></button>
+	</ion-header-bar> -->
+<ion-view view-title="Course">
+	<ion-nav-bar class="bar-balanced">
+		<ion-nav-back-button class="button-clear">
+			<i class="ion-arrow-left-b"></i> Back
+		</ion-nav-back-button>
+	</ion-nav-bar>
+	<ion-nav-buttons side="secondary">
+		<button type="button" ng-click="openCourseOptionsPopover($event)" class="btn" style="font-size: 1.5em;"><i class="ion-more"></i></button>
+	</ion-nav-buttons>
+	<ion-content class="course-view">
+		<ion-refresher pulling-text="Pull to refresh..." on-refresh="refreshCourse(course.content._id)"></ion-refresher>
+		<div class="course-view-description" style='background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url({{ course.content.image }})'>
+				<div class="course-description">
+					<!-- <span class="course-category" ng-repeat="category in course.content.categories.slice(0, course.content.categories.length-1)">{{ category }}, </span>
+					<span class="course-category last">{{ course.content.categories[course.content.categories.length-1] }}</span>
+					<br> -->
+					<img class="lang-thumbnail" ng-src='{{ findLanguage(course.content.lang1).image }}'>
+		        	<img class="lang-thumbnail" ng-src='{{ findLanguage(course.content.lang2).image }}'>
+					<div class="course-difficulty">{{ course.content.difficulty }}</div>
+					<div class="course-name">{{ course.content.name }}</div>
+					<div class="course-caption">{{ course.content.caption }}</div>
+					<div class='course-numdecks'>{{ course.content.decks.length }} deck(s)</div>
+					
+					<!-- <p class="course-date">{{ course.content.updatedAt | DateFormat }}</p> -->
+				</div>
+			<div class="course-navbar">
+				<ul class="pagination course-navbar-left">
+					<li>
+						<button class='btn' ng-click='showCourseComments()'>
+							<i class='ion-chatbox'></i>
+							<p class='course-social-count'>{{ course.content.comments.length }}</p>
+						</button>
+					</li>
+					<li>
+						<button class='btn'ng-click='saveCourse(course.content)' ng-disabled='currentUser.username == course.content.author.username'>
+							<i class='ion-plus-round'></i>
+							<p class='course-social-count'>{{ course.content.saved.length }}</p>
+						</button>
+					</li>
+				</ul>
+				<ul class="pagination course-navbar-right">
+					<!-- <li><button type="button" ng-click="showUnavailablePopover($event)" class="btn"><i class="ion-share"></i></button></li> -->
+					<li>
+						<button class='btn mini-avatar' ui-sref='tabs.me({ username: course.content.author.username })'>
+						<img ng-src='{{ course.content.author.avatar }}'>
+						<p>@{{ course.content.author.username }}</p>
+						</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="empty-tab" ng-show="emptyDecksInCourse">
+			<i class="ion-sad-outline" style="font-size: 5em;"></i>
+			<h3>You Don't Have Any Decks.</h3>
+			<p>Get started by creating your own decks or saving other decks in the uniVerze.</p>
+		</div>
+		<div class="course-view-container">
+			<ul class="deck-list active">
+				<li ng-repeat="deck in course.content.decks">
+					<deck></deck>
+				</li>
+			</ul>
+			<ul class="phrase-list">
+				<li class="deck-phrase-list" ng-repeat="deck in course.content.decks">
+					<div class="deck-name">{{ deck.content.name }}</div>
+					<ul>
+						<li class="phrase" ng-repeat="card in deck.content.cards">
+							<div class="front-phrase">{{ card.frontphrase }}</div>
+							<div class="back-phrase">{{ card.backphrase }}</div>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</ion-content>
+	<button type="button" class="btn course-review-button" ng-click="showDeckCourseModes('course')" ng-disabled="emptyDecksInCourse || emptyCardsInCourse"><i class="ion-play"></i></button>
+	<div class='wrap course-review-buttons'>
+  		<div class='content'>
+			<button type="button" class="btn" id="learn-btn" ng-click="deckCourseModeClicked('learn', 'course')" ng-disabled="finishedLearn"><i class="ion-lightbulb"></i><div>Learn</div></button>
+			<button type="button" class="btn" id="review-btn" ng-click="deckCourseModeClicked('review', 'course')" ng-disabled="!finishedLearn"><i class="ion-loop"></i><div>Review</div></button>
+			<button type="button" class="btn" id="test-btn" ng-click="deckCourseModeClicked('test', 'course')" ng-disabled="!finishedLearn"><i class="ion-document-text"></i><div>Test</div></button>
+  		</div>
+  	</div>
+<!-- </ion-modal-view> -->
+</ion-view>

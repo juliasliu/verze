@@ -1,0 +1,40 @@
+<!-- <ion-modal-view>
+	<ion-header-bar class="bar-balanced">
+		<h1 class="title">Card</h1>
+		<button class="btn" ng-click="closeCard()"><i class="ion-close" style="font-size: 2em;"></i></button>
+	</ion-header-bar> -->
+<ion-view view-title="Card">
+	<ion-nav-bar class="bar-balanced">
+		<ion-nav-back-button class="button-clear">
+			<i class="ion-arrow-left-b"></i> Back
+		</ion-nav-back-button>
+	</ion-nav-bar>
+	<ion-content>
+		<ion-refresher pulling-text="Pull to refresh..." on-refresh="refreshCard()"></ion-refresher>
+		<card toggle-show-card-parts="toggleShowCardParts">
+			<front>
+				<card-header></card-header>
+				<front-body>
+					<social-buttons></social-buttons>
+				</front-body>
+			</front>
+			<back>
+				<card-header></card-header>
+				<back-body>
+					<social-buttons></social-buttons>
+				</back-body>
+			</back>
+		</card>
+		<magic></magic>
+		<!-- <div class="magic-panel">
+  			<h4>Magic</h4>
+  			<ul class="card-list">
+  				<li class="preview-card" style="margin-bottom: 0px; background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url({{ card.img }});">
+					<div class="preview-card-title" style="color: {{  }}">{{  }}</div>
+					<div class="preview-card-subtitle" style="color: {{  }}">{{  }}</div>
+				</li>
+  			</ul>
+  		</div> -->
+	</ion-content>
+<!-- </ion-modal-view> -->
+</ion-view>

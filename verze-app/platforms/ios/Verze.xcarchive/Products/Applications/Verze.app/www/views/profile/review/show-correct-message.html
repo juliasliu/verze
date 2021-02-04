@@ -1,0 +1,24 @@
+<div class="mini-message" ng-show="showCorrectBack">
+	  		<i class="ion-checkmark-round"></i>
+	  		<div class="message">Wow, nice job!</div>
+	  		<button class="btn btn-success" ng-click="next()">Next</button>
+	  		<div class="sub-message"><strong>{{ randomCard.frontphrase }}</strong> is <strong>{{ randomCard.backphrase }}</strong></div>
+	  	</div>
+	  	<div class="mini-message" ng-show="showCorrectFront">
+	  		<i class="ion-checkmark-round"></i>
+	  		<div class="message">Wow, nice job!</div>
+	  		<button class="btn btn-success" ng-click="next()">Next</button>
+	  		<div class="sub-message"><strong>{{ randomCard.frontphrase }}</strong> is <strong>{{ randomCard.backphrase }}</strong></div>
+	  	</div>
+	  	<div class="mini-message" ng-show="showIncorrectBack">
+	  		<i class="ion-close-round"></i>
+	  		<div class="message">Aw, you missed it.</div>
+	  		<button class="btn btn-success" ng-click="next()">Next</button>
+	  		<div class="sub-message"><strong>{{ randomCard.frontphrase }}</strong> is <strong>{{ randomCard.backphrase }}</strong></div>
+	  	</div>
+	  	<div class="mini-message" ng-show="showIncorrectFront">
+	  		<i class="ion-close-round"></i>
+	  		<div class="message">Aw, you missed it.</div>
+	  		<button class="btn btn-success" ng-click="next()">Next</button>
+	  		<div class="sub-message"><strong>{{ randomCard.frontphrase }}</strong> is <strong>{{ randomCard.backphrase }}</strong></div>
+	  	</div>

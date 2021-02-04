@@ -1,0 +1,55 @@
+	<div class="wrapper create-container">
+		<card>
+			<front-body>
+				<social-buttons></social-buttons>
+			</front-body>
+			<back-body>
+				<social-buttons></social-buttons>
+			</back-body>
+		</card>
+  		<div class="edit-container">
+	  		<ul class="pagination pagination-lg edit-toolbar">
+			    <li class="col-xs-3 btn btn-edit btn-edit-info active" ng-click="changeTemplate('info')"><i class="ion-folder" style="font-size: 1.5em;"></i></li>
+			    <!-- <li class="col-xs-2 btn btn-edit btn-edit-text" ng-click="changeTemplate('text')"><i class="ion-quote" style="font-size: 1.5em; margin: 5px;"></i></li>
+			    <li class="col-xs-2 btn btn-edit btn-edit-style" ng-click="changeTemplate('style')"><i class="ion-paintbrush" style="font-size: 1.5em;"></i></li> -->
+			    <li class="col-xs-3 btn btn-edit btn-edit-media" ng-click="changeTemplate('media')"><i class="ion-images" style="font-size: 1.5em;"></i></li>
+			    <li class="col-xs-3 btn btn-edit btn-edit-audio" ng-click="changeTemplate('audio')"><i class="ion-volume-high" style="font-size: 1.5em;"></i></li>
+			    <!-- <li class="col-xs-2 btn btn-edit btn-edit-extra" ng-click="changeTemplate('extra')"><i class="ion-pound" style="font-size: 1.5em;"></i></li> -->
+			    <li class="col-xs-3 btn btn-edit btn-edit-submit btn-primary" ng-click="addCard()"><i class="ion-paper-airplane" style="font-size: 1.5em;"></i></li>
+			</ul>
+			<div class="edit-content">
+				<ng-include src="template"></ng-include>
+			</div>
+		</div>
+		<div class="text-edit-popover">
+		    <span><button type="button" class="btn" ng-click="editCardText('font')"><i class="fa fa-font"></i></button></span>
+		    <span ng-show="showEditCardText.showFont">
+		    	<select name="Style" id="style"
+					ng-model="card.fontstyle">
+					<option value="American Typewriter">American Typewriter</option>
+					<option value="Arial">Arial</option>
+					<option value="Bradley Hand">Bradley Hand</option>
+					<option value="Chalkduster">Chalkduster</option>
+					<option value="Copperplate">Copperplate</option>
+					<option value="Courier">Courier</option>
+					<option value="Futura">Futura</option>
+					<option value="Georgia">Georgia</option>
+					<option value="Gill Sans">Gill Sans</option>
+					<option value="Helvetica">Helvetica</option>
+					<option value="Menlo">Menlo</option>
+					<option value="Papyrus">Papyrus</option>
+					<option value="Snell Roundhand">Snell Roundhand</option>
+					<option value="Times New Roman">Times New Roman</option>
+					<option value="Verdana">Verdana</option>
+				</select>
+		    </span>
+		    <span><button type="button" class="btn" ng-click="editCardText('size')"><i class="fa fa-text-height"></i></button></span>
+			<span ng-show="showEditCardText.showSize">
+				<button class="btn btn-gray" ng-click="decrSize()" style="display: inline;"><i class="ion-chevron-down"></i></button>
+				<span id="font-size" style="display: inline;">{{ card.fontsize }} px</span>
+				<button class="btn btn-gray" ng-click="incrSize()" style="display: inline;"><i class="ion-chevron-up"></i></button>
+			</span>
+		    <span ng-show="showEditCardText.showAudio"><button type="button" class="btn" ng-click="editCardText('audio')"><i class="fa fa-microphone"></i></button></span>
+		    <span ng-hide="showEditCardText.showAudio"><button type="button" class="btn"><i class="fa fa-microphone-slash"></i></button></span>
+	</div>
+	</div>

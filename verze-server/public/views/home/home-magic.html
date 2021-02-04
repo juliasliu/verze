@@ -1,0 +1,32 @@
+<div class="home-page home-magic">
+	<div class="title magic-trans">Magic</div>
+	<div class="subtitle magic-caption-trans">Recommended courses and decks for you</div>
+	<div class="list home-list">
+		<div class="list-header courses-trans">Courses</div>
+			<ul class="recent-decks-courses">
+				<li ng-repeat="course in recCourses track by $index">
+					<course></course>
+				</li>
+			</ul>
+		<div class="list-header decks-trans">Decks</div>
+			<ul class="recent-decks-courses">
+		   		<li ng-repeat="deck in recDecks track by $index">
+					<deck></deck>
+				</li>
+			</ul>
+		<div class="list-header cards-trans">Cards</div>
+			<ul class="recent-decks-courses">
+		   		<li ng-repeat="card in recCards track by $index">
+					<thumbnail-card></thumbnail-card>
+				</li>
+			</ul>
+	</div>
+	<div class="list home-list">
+		<div class="list-header follow-users-trans">Follow users</div>
+			<ul class="recent-decks-courses">
+				<li ng-repeat="user in recUsers | limitTo: 10">
+					<user></user>
+				</li>
+			</ul>
+	</div>
+</div>

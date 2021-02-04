@@ -1,0 +1,10 @@
+<!-- <ion-scroll direction="y"> -->
+	<div class="list"> <!-- ui-sref="tabs.category({ category: category.name })" -->
+		 <div class="list-header">All Categories</div>
+		<a ng-repeat="category in categories" class="item item-avatar" ng-click="onCategoryClick(category.name)">
+			<img ng-src="{{ category.image }}">
+			<p class="item-right"><i class="ion-chevron-right"></i></p>
+			<h2>{{ category.name }}</h2>
+		</a>
+	</div>
+<!-- </ion-scroll> -->

@@ -1,0 +1,31 @@
+<ion-modal-view>
+	<ion-header-bar class="bar-balanced">
+		<h1 class="title header-title">Sort By</h1>
+		<div class="secondary-header search-header">
+			<button class="btn btn-primary" type="button" ng-click="sortBy()">Browse</button>
+		</div>
+	</ion-header-bar>
+	<ion-content>
+  		<div class="list sort-by-list">
+			<div class="list-header">Sort By</div>
+			<div class="item item-icon-left">
+			  	<i class="icon ion-heart"></i>
+			  	<label for="loves">
+			  		<input type="checkbox" id="loves" value="loves" name="fooby[1][]" ng-model="sortByVars.loves">
+			  	Loves</label>
+			</div>
+			<div class="item item-icon-left">
+			  	<i class="icon ion-plus-round"></i>
+			  	<label for="saves">
+			  		<input type="checkbox" id="saves" value="saves" name="fooby[1][]" ng-model="sortByVars.saves">
+			  	Saves</label>
+			</div>
+			<div class="item item-icon-left">
+			  	<i class="icon ion-clock"></i>
+			  	<label for="newest">
+			  		<input type="checkbox" id="newest" value="newest" name="fooby[1][]" ng-model="sortByVars.newest">
+			  	Newest</label>
+			</div>
+		</div>
+	</ion-content>
+</ion-modal-view>

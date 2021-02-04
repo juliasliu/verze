@@ -1,0 +1,27 @@
+<ion-popover-view style="height: 220px;">
+    <ion-header-bar>
+      <h1 class="title">Settings</h1>
+    </ion-header-bar>
+    <ion-content>
+    	<div class="list popover-list review-settings-list">
+	      <!-- <a class="item" ng-disabled="deckFinished" ng-click="shuffle()">Shuffle <i class="ion-shuffle item-right"></i></a>
+	      <a class="item" ng-disabled="deckFinished" ng-click="play()">Play <i class="ion-play item-right"></i></a> -->
+	      <div class="item switch-item" ng-hide="deckFinished || (finalMode && finalFinished) || (reviewFinalMode && reviewFinalFinished)">
+	      	  <span>{{ deck.content.lang1 }}</span>
+		      <label class="switch">
+				  <input type="checkbox" class="side-switch" ng-model="side.checked">
+				  <div class="slider"></div>
+				</label>
+		      <span>{{ deck.content.lang2 }}</span>
+	      </div>
+	      <!-- <div class="item" ng-show="(finalMode && finalFinished) || (reviewFinalMode && reviewFinalFinished)">
+	      	  {{ course.content.lang1 }}
+		      <label class="switch">
+				  <input type="checkbox" class="side-switch" ng-model="side.checked">
+				  <div class="slider"></div>
+				</label>
+		      {{ course.content.lang2 }}
+	      </div> -->
+	    </div>
+    </ion-content>
+ </ion-popover-view>

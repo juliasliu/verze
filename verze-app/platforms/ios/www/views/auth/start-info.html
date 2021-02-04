@@ -1,0 +1,54 @@
+<div class="start-page">
+	<ion-slides options="options" slider="data.slider">
+	    <ion-slide-page class="register-login-page first">
+	      <div class="box first-box">
+			  <div class="start-title"><h1>Verze</h1></div>
+			  <h4>Verze is where the magic begins.</h4>
+			  <p>Create and save flashcards, decks, and courses. Verze personalizes your experience to make learning most efficient.</p>
+			  <div class="start-footer">
+				<button type="button" class="btn btn-lg btn-verted btn-block" ui-sref="register">GET STARTED</button>
+				Already have an account?
+				<button type="button" class="btn btn-inverted btn-block" ui-sref="login">LOGIN</button>
+			  </div>
+			  <p class="caption">New York City, US</p>
+	      </div>
+	    </ion-slide-page>
+	    <ion-slide-page class="register-login-page second">
+	      <div class="box second-box">
+	      	<div class="start-title"><h1>Verze</h1></div>
+	      	<h4>It's more than just flashcards.</h4>
+		  	<p>Verze is not your typical learning app. Equipped with social features, flashcards promote more user interaction.</p>
+		  	<img src="images/slide-social.png" style="margin-top: 20px;">
+			<div class="start-footer">
+				<button type="button" class="btn btn-lg btn-verted btn-block" ui-sref="register">GET STARTED</button>
+				Already have an account?
+				<button type="button" class="btn btn-inverted btn-block" ui-sref="login">LOGIN</button>
+			</div>
+			<p class="caption">Beijing, China</p>
+	      </div>
+	    </ion-slide-page>
+	   <ion-slide-page class="register-login-page third">
+	      <div class="box third-box">
+	      	<div class="start-title"><h1>Verze</h1></div>
+	      	<h4>It's easy. It's simple. It's classy.</h4>
+		  	<p>All you have to do is create an account, pick your first course, and get started on learning a new language.</p>
+		  	<ul class="languages-list">
+		  		<li><img ng-src="{{ findLanguage('English').image }}"></li>
+		  		<li><img ng-src="{{ findLanguage('Chinese').image }}"></li>
+		  		<li><img ng-src="{{ findLanguage('Spanish').image }}"></li>
+		  		<li><img ng-src="{{ findLanguage('French').image }}"></li>
+		  		<li><img ng-src="{{ findLanguage('Japanese').image }}"></li>
+		  		<li><img ng-src="{{ findLanguage('Korean').image }}"></li>
+		  		<li><img ng-src="{{ findLanguage('German').image }}"></li>
+		  		<li>...more!</li>
+		  	</ul>
+			<div class="start-footer">
+				<button type="button" class="btn btn-lg btn-verted btn-block" ui-sref="register">Get Started</button>
+				Already have an account?
+				<button type="button" class="btn btn-inverted btn-block" ui-sref="login">LOGIN</button>
+			</div>
+			<p class="caption">Paris, France</p>
+		</div>
+	   </ion-slide-page>
+	  </ion-slides>
+</div>

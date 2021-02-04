@@ -1,0 +1,17 @@
+<ion-popover-view style="height: 160px; overflow-y: scroll;">
+    <ion-content>
+    	<div class="list popover-list">
+	    	<div class="item switch-item">
+	      	  <span>Cards</span>
+		      <label class="switch">
+				  <input type="checkbox" class="side-switch" ng-model="deckView.checked">
+				  <div class="slider"></div>
+				</label>
+		      <span>Phrases</span>
+	      	</div>
+			<div class="item" ng-hide="currentUser.username != deck.content.author.username" ng-click="onEditDeckClick(deck.content._id)">Edit <i class="ion-edit item-right"></i></div>
+	      <div class="item" ng-click="resetDeck()">Restart <i class="ion-refresh item-right"></i></div>
+	      <div class="item" ng-show="deck.content != null" ng-click="showFlag()">Flag <i class="ion-flag item-right"></i></div>
+	    </div>
+    </ion-content>
+ </ion-popover-view>

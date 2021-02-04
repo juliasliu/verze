@@ -1,0 +1,60 @@
+<ion-view view-title="Browse">
+	<ion-nav-bar class="bar-balanced">
+		<ion-nav-back-button class="button-clear">
+			<i class="ion-arrow-left-b"></i> Back
+		</ion-nav-back-button>
+	</ion-nav-bar>
+	<ion-content>
+	<form ng-submit="search(query)" pretty-submit>
+		<div id="search-bar">
+		    <div class="item item-input-inset">
+		      <label class="item-input-wrapper">
+		        <i class="icon ion-search placeholder-icon"></i>
+		        <input type="search" class="search-bar" placeholder="Search cards, decks, courses, users, tags" ng-model="query">
+		        <button type="button" ng-click="cancelSearch()"><i class="icon ion-close-circled placeholder-icon item-right"></i></button>
+		      </label>
+		    </div>
+		</div>
+	</form>
+	<div>
+		<!-- <div class="hot-bar">
+			<div class="hot-topics">
+				<ul>
+				<ion-scroll direction="x">
+					<li>#top</li>
+					<li>#hottopics</li>
+					<li>#woo</li>
+					<li>#filler</li>
+					<li>#yeah</li>
+					<li>#awesome</li>
+				</ion-scroll>
+				</ul>
+			</div>
+			<div class="hot-users">
+				<ul>
+					<li class="thumbnail-avatar">
+						<img src="images/avatar-icon-flat.dms">
+					</li>
+					<li class="thumbnail-avatar">
+						<img src="images/me.png">
+					</li>
+					<li class="thumbnail-avatar">
+						<img src="images/avatar-icon-flat.dms">
+					</li>
+					<li class="thumbnail-avatar">
+						<img src="images/me.png">
+					</li>
+				</ul>
+			</div> 
+		</div>-->
+		<div class="panel search-panel-tabs">
+			<ul class="search-navbar nav nav-tabs">
+				<li class="active search-tab languages-tab" ng-click="switchSearchTab('Languages')">Languages</li>
+				<li class="search-tab categories-tab" ng-click="switchSearchTab('Categories')">Categories</li>
+			</ul>
+		</div>
+		<ng-include src="template">
+		</ng-include>
+	</div>
+	</ion-content>
+</ion-view>

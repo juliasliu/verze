@@ -1,0 +1,24 @@
+<ion-modal-view>
+	<ion-header-bar>
+		<h1 class="title">Import Cards</h1>
+		<div class="secondary-header">
+			<button class="btn" ng-click="closeImportCards()"><i class="ion-close" style="font-size: 2em;"></i></button>
+		</div>
+	</ion-header-bar>
+	<ion-content>
+		<div class="import-cards-container">
+			<p>You can import cards by pasting a textual list of the cards with their phrases, translations, and pronunciations.
+			Follow the example format below.</p>
+			<div>
+				<h4>Example:</h4>
+				<p><i>Front phrase / pronunciation / example / Back phrase / pronunciation / example</i><br>
+					<i>Front phrase / pronunciation / example / Back phrase / pronunciation / example</i></p>
+				<p><i>¡Bienvenido! / BEE-EN-VIN-'EE-DOE / ¡Bienvenido a México! / Welcome! / 'WEL-KUHM / Welcome to Mexico!</i><br>
+					<i>¿Cómo estás? / ? / ¿Cómo estás hoy? / How are you? / ? / How are you today?</i></p>
+				<p>To separate each text, type / and to leave an empty space, type ?</p>
+			</div>
+			<textarea cols="40" rows="10" class="form-control" placeholder="Phrase" ng-model="m.importedCards"></textarea>
+			<button class="btn btn-primary" type="submit" ng-click="importCards()">Import</button>
+		</div>
+	</ion-content>
+</ion-modal-view>

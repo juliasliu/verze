@@ -1,0 +1,29 @@
+<ion-view view-title="Badges">
+	<ion-nav-bar class="bar-balanced">
+		<ion-nav-back-button class="button-clear">
+			<i class="ion-arrow-left-b"></i> Back
+		</ion-nav-back-button>
+	</ion-nav-bar>
+	<ion-content>
+		<ul class="list badge-list">
+	        <li ng-repeat="badge in badges">
+	        	<div class="badge">
+	        		<div class="badge-name">{{ badge.name }}</div>
+	        		<img src="images/badge.png" alt="badge" class="badge-icon"/>
+	        		<div class="badge-lang">
+	        			<img class="lang-thumbnail" ng-src='{{ findLanguage(badge.lang1).image }}'>
+	        			<img class="lang-thumbnail" ng-src='{{ findLanguage(badge.lang2).image }}'>
+	        		</div>
+	        		<div class="badge-difficulty">
+	        			{{ badge.difficulty }}
+	        		</div>
+	        	</div>
+	        </li>
+	    </ul>
+	    <div class="empty-tab" ng-show="emptyBadges">
+			<i class="ion-sad-outline" style="font-size: 5em;"></i>
+			<h2>You Don't Have Any Badges.</h2>
+			<p>Get started on a course and earn more badges!</p>
+		</div>
+	</ion-content>
+</ion-view>

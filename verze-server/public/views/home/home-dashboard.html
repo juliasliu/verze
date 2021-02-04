@@ -1,0 +1,111 @@
+<!-- <ion-refresher pulling-text="Pull to refresh..." on-refresh="refreshMe()"></ion-refresher> -->
+<!-- <div class="slideshow">
+	<span class="upper">Hot Pick</span>
+	<div class="slide" ng-repeat="hotPick in hotPicks" ng-click='onCourseClick(hotPick.content._id)' style="background-color: {{ hotPick.background }}">
+		<div class="title">{{ hotPick.content.name }}</div>
+		<button class='author btn mini-avatar'>
+			<img ng-src='{{ hotPick.content.author.avatar }}'>
+			<p style='display: inline-block;'>@{{ hotPick.content.author.username }}</p>
+		</button>
+		<img class="image" ng-src="{{ hotPick.content.image }}">
+	</div>
+</div> -->
+<div class="home-page home-dashboard">
+	<div class="title dashboard-trans">Dashboard</div>
+	<div class="subtitle dashboard-caption-trans" ng-hide="emptyDashboard">Keep learning!</div>
+	<div class="list home-list">
+		<!-- <div class="list-header">Trending</div>
+			<ul class="recent-decks-courses">
+			<ion-scroll direction="x">
+		   		<li ng-repeat="deck in decks">
+					<deck></deck>
+				</li>
+				<li ng-repeat="course in courses">
+					<course></course>
+				</li>
+			</ion-scroll>
+			</ul> -->
+		<!-- <div class="list-header">Following</div>
+			<ul class="recent-decks-courses">
+			<ion-scroll direction="x">
+		   		<li ng-repeat="deck in decks">
+					<deck></deck>
+				</li>
+				<li ng-repeat="course in courses">
+					<course></course>
+				</li>
+			</ion-scroll>
+			</ul> -->
+		<!-- <div class="list-header" ng-hide="emptyDecks && emptyCourses && emptyCards">Recommended</div>
+			<ul class="recent-decks-courses" ng-hide="emptyDecks && emptyCourses && emptyCards">
+			<ion-scroll direction="x">
+		   		<li ng-repeat="deck in decks">
+					<deck></deck>
+				</li>
+				<li ng-repeat="course in courses">
+					<course></course>
+				</li>
+			</ion-scroll>
+			</ul> -->
+		<div class="list-header today-trans" ng-show="(decks | lastReviewed:'Today').length || (courses | lastReviewed:'Today').length">Today</div>
+			<ul class="recent-decks-courses" ng-show="(decks | lastReviewed:'Today').length || (courses | lastReviewed:'Today').length">
+			
+		   		<li ng-repeat="deck in (decks | lastReviewed:'Today') | limitTo: 3">
+					<deck></deck>
+				</li>
+				<li ng-repeat="course in (courses | lastReviewed:'Today') | limitTo: 3">
+					<course></course>
+				</li>
+			
+			</ul>
+		<div class="list-header this-week-trans" ng-show="(decks | lastReviewed:'Week').length || (courses | lastReviewed:'Week').length">This Week</div>
+			<ul class="recent-decks-courses" ng-show="(decks | lastReviewed:'Week').length || (courses | lastReviewed:'Week').length">
+			
+		   		<li ng-repeat="deck in (decks | lastReviewed:'Week') | limitTo: 3">
+					<deck></deck>
+				</li>
+				<li ng-repeat="course in (courses | lastReviewed:'Week') | limitTo: 3">
+					<course></course>
+				</li>
+			
+			</ul>
+		<div class="list-header this-month-trans" ng-show="(decks | lastReviewed:'Month').length || (courses | lastReviewed:'Month').length">This Month</div>
+			<ul class="recent-decks-courses" ng-show="(decks | lastReviewed:'Month').length || (courses | lastReviewed:'Month').length">
+			
+		   		<li ng-repeat="deck in (decks | lastReviewed:'Month') | limitTo: 3">
+					<deck></deck>
+				</li>
+				<li ng-repeat="course in (courses | lastReviewed:'Month') | limitTo: 3">
+					<course></course>
+				</li>
+			
+			</ul>
+		<div class="list-header welcome-back-trans" ng-show="(decks | lastReviewed:'Older').length || (courses | lastReviewed:'Older').length">Welcome Back</div>
+			<ul class="recent-decks-courses" ng-show="(decks | lastReviewed:'Older').length || (courses | lastReviewed:'Older').length">
+			
+		   		<li ng-repeat="deck in (decks | lastReviewed:'Older') | limitTo: 3">
+					<deck></deck>
+				</li>
+				<li ng-repeat="course in (courses | lastReviewed:'Older') | limitTo: 3">
+					<course></course>
+				</li>
+			
+			</ul>
+	</div>
+	
+	<div class="subtitle get-started-trans" ng-show="emptyDashboard">Get Started</div>
+	<div class="list home-list" ng-show="emptyDashboard">
+		<div class="list-header courses-trans">Courses</div>
+			<ul class="recent-decks-courses">
+				<li ng-repeat="course in classicCourses">
+					<course></course>
+				</li>
+			</ul>
+		<div class="list-header decks-trans">Decks</div>
+			<ul class="recent-decks-courses">
+		   		<li ng-repeat="deck in classicDecks">
+					<deck></deck>
+				</li>
+			</ul>
+	</div>
+</div>
